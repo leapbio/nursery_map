@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Multiple filters on markers</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+<link href='style.css' rel='stylesheet' />
+
+</head>
+<body>
+
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; right:0; width:80%; border-left:2px solid #777777; }
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:arial, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+	background:#3f4348 url('http://www.frecosse.com/workshop/accordion_menu/bg.png');
+}
+
+.accordian-menu {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+width:20%;
+height:inherit;
+overflow:auto;
+}
+
+ul {
+	list-style:none;
+	margin:0; 
+	padding:0;
+	-moz-box-shadow: 0 0 5px #111;
+	-webkit-box-shadow: 0 0 5px #111;
+	box-shadow: 0 0 5px #111;
+}
+
+ul li label {
+	background: #575e63; /* fallback colour */
+	border-top:1px solid #878e98;
+	border-bottom:1px solid #33373d;
+	color: #fff;
+	text-shadow: 0 1px 1px #000;
+	letter-spacing: 0.09em;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#575e63), to(#3f4347));
+	background: -webkit-linear-gradient(top, #575e63, #3f4347);
+	background: -moz-linear-gradient(top, #575e63, #3f4347);
+	background: -ms-linear-gradient(top, #575e63, #3f4347);
+	background: -o-linear-gradient(top, #575e63, #3f4347);
+}
+
+ul li input[type='checkbox'] {
+	display: none;
+}
+
+ul li label {
+	display:block;
+	padding:12px;
+	width:inherit;
+}
+
+ul li i {
+	font-size:18px;
+	vertical-align: middle;
+	width:20px;
+	display:inline-block;
+}
+
+ul li span {
+	display:inline;
+	float:right;
+	background:#48515c;
+	border:1px solid #3c434c;
+	border-bottom:1px solid #707781;
+	padding:4px 6px;
+	font-size:10px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: inset 0 0 10px #111;
+	-webkit-box-shadow: inset 0 0 10px #111;
+	box-shadow: inner 0 0 10px #111;
+	position:relative;
+}
+
+ul li label:hover {
+	background: #566f82; /* fallback colour */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+	background: -webkit-linear-gradient(top, #566f82, #3e505e);
+	background: -moz-linear-gradient(top, #566f82, #3e505e);
+	background: -ms-linear-gradient(top, #566f82, #3e505e);
+	background: -o-linear-gradient(top, #566f82, #3e505e);
+}
+
+ul li label:hover span {
+	background:#3e505e;
+}
+
+ul li input[type='checkbox']:checked ~ label {
+	background: #44c6eb; /* fallback colour */
+	border-top:1px solid #878e98;
+	border-bottom:1px solid #71C177;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#44c6eb), to(#2799db));
+	background: -webkit-linear-gradient(top, #71C177, #3C8041);
+	background: -moz-linear-gradient(top, #71C177, #3C8041);
+	background: -ms-linear-gradient(top, #71C177, #3C8041);
+	background: -o-linear-gradient(top, #71C177, #3C8041);
+}
+
+ul li input[type='checkbox']:checked ~ label span {
+	background: #3C8041; /* fallback colour */
+	border-top:1px solid #111;
+	border-bottom:1px solid #71C177;
+	-moz-box-shadow: inset 0 0 5px #111;
+	-webkit-box-shadow: inset 0 0 5px #111;
+	box-shadow: inner 0 0 5px #111;
+}
+
+ul li input[type='checkbox']:checked ~ .options {
+	height: auto;
+	display:block;
+	min-height:40px;
+	max-height:400px;
+	width:inherit;
+}
+
+ul ul {
+	background:#fff; margin:0; padding:0;
+	-moz-box-shadow: inset 0 2px 2px #b3b3b3;
+	-webkit-box-shadow: inset 0 2px 2px #b3b3b3;
+	box-shadow: inner 0 2px 2px #b3b3b3;
+}
+
+ul ul li a {
+	display:block;
+	padding:6px 12px;
+	color:#999;
+	text-decoration:none;
+}
+
+ul ul li a:hover {
+	color:#71C177;
+}
+
+ul ul li a span {
+	color:#999;
+	background:none;
+	border:1px solid #ccc; 
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+ul ul li {
+	border-bottom:1px solid #ccc;
+}
+
+ul ul li:first-child {
+	padding-top:6px;
+}
+
+ul ul li:last-child {
+	padding-bottom:6px; border:0;
+}
+
+.options {
+	height: 0;
+	display: block;
+	overflow: hidden;
+}
+
+</style>
+
+<!-- jQuery is required for this example. -->
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+
+
+<div class="accordian-menu">
+<ul>
+	<li class="block">
+		<input type="checkbox" name="item" id="item1" />   
+		<label for="item1">Show All <span>1</span></label>
+		<ul class="options">
+			<li><a href='#' class='active' data-filter='all'>Show all Nurseries</a></li>
+		</ul>
+	</li>
+</ul>
+<ul>
+	<li class="block">
+		<input type="checkbox" name="item" id="item2" />   
+		<label for="item2">Nursery Types <span>3</span></label>
+		<ul class="options">
+			<li><a href='#' data-filter='ohio_nativ'>Ohio Native Species</a></li>
+			<li><a href='#' data-filter='nat_specia'>Native Plant Specialist</a></li>
+			<li><a href='#' data-filter='organic'>Organic Nursery</a></li>
+		</ul>
+	</li>
+	<li class="block">
+		<input type="checkbox" name="item" id="item3" />   
+		<label for="item3">Grow Types <span>5</span></label>
+		<ul class="options">
+			<li><a href='#' data-filter='seed'>Seed</a></li>
+			<li><a href='#' data-filter='plants'>Plants</a></li>
+			<li><a href='#' data-filter='known_locs'>Known Seed Locations</a></li>
+			<li><a href='#' data-filter='grown_seed'>Seed Grown</a></li>
+			<li><a href='#' data-filter='clonal'>Clonally Grown</a></li>
+		</ul>
+	</li>
+	<li class="block">
+		<input type="checkbox" name="item" id="item4" />   
+		<label for="item4">Plant Types <span>4</span></label>
+		<ul class="options">
+			<li><a href='#' data-filter='herbaceous'>Herbaceous</a></li>
+			<li><a href='#' data-filter='ferns'>Ferns</a></li>
+			<li><a href='#' data-filter='woody'>Woody</a></li>
+			<li><a href='#' data-filter='shrubs'>Shrubs</a></li>
+		</ul>
+	</li>
+	<li class="block">
+		<input type="checkbox" name="item" id="item5" />   
+		<label for="item5">Other Material <span>5</span></label>
+		<ul class="options">
+			<li><a href='#' data-filter='bare_root'>Bare Roots</a></li>
+			<li><a href='#' data-filter='cont_trees'>Containerized Trees</a></li>
+			<li><a href='#' data-filter='bb_trees'>B&amp;B Trees</a></li>
+			<li><a href='#' data-filter='bio_mat'>Bioengineering Material</a></li>
+			<li><a href='#' data-filter='wet_rest'>Wetland Restoration</a></li>
+		</ul>
+	</li>
+	<li class="block">
+		<input type="checkbox" name="item" id="item6" />   
+		<label for="item6">Sales Info <span>3</span></label>
+		<ul class="options">
+			<li><a href='#' data-filter='wholesale'>Wholesale</a></li>
+			<li><a href='#' data-filter='app_web'>Appointment or Web Orders Only</a></li>
+			<li><a href='#' data-filter='retail'>Retail</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+<div id='map'></div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
+// In the propeties object for each marker define key's
+// like `rentals`, `fuel`, `tackleshop` that are set to true for false
+// depending on whether or they exist at a location.
+
+
+var geojson = [
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Cardno Native Plant Nursery",
+        "owner": "none listed",
+        "email": "none listed",
+        "number": "574.586.2412",
+        "sales": "none listed",
+        "gen_email": "none listed",
+        "sales_emai": "nurserysales@cardno.com",
+        "website": "www.cardnojfnew.com/",
+        "address": "128 Sunset Dr Walkerton, IN 46574",
+        "street": "128 Sunset Dr",
+        "city": "Walkerton",
+        "state": "IN",
+        "zip": "46574",
+        "descriptio": "Seeds, bare root, plugs, and gallons. Trees, vines, ferns, forbs, and grasses. Wetland and prarie seed mixes",
+        "type": "Wholesale only.  Walk-ins by appointment or schedule a tour.",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": true,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": true,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.4940616,
+          41.4583267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Gilson Gardens",
+        "owner": "Mark Gilson",
+        "email": "mark@gilsongardens.biz",
+        "number": "(440) 259-4845",
+        "sales": "Annette Howard",
+        "gen_email": "annette@gilsongardens.biz",
+        "sales_emai": "sales@gilsongardens.biz",
+        "website": "www.gilsongardens.biz",
+        "address": "3059 N Ridge Rd. Perry, OH 44081",
+        "street": "3059 N Ridge Rd.",
+        "city": "Perry",
+        "state": "OH",
+        "zip": "44081",
+        "descriptio": "Ground covers, Perennials, Shrubs, Grasses, Vines and Natives",
+        "type": "Wholesale and retail",
+        "pct_native": "20",
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": false,
+        "organic": false,
+        "nat_specia": false,
+        "wholesale": true,
+        "app_web": false,
+        "retail": true,
+        "comments": "We grow a selection of local and nerby natives for restoration and retail, we also provide native cultivars for landscapers and garden centers.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.172937,
+          41.771242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Naturally Native",
+        "owner": "Jan Hunter",
+        "email": "nnn@naturallynative.net",
+        "number": "(419) 833-2020",
+        "sales": "Jan Hunter",
+        "gen_email": "nnn@naturallynative.net",
+        "sales_emai": "nnn@naturallynative.net",
+        "website": "www.naturallynative.net",
+        "address": "13737 St. Rt. 582, Bowling Green, OH 43402",
+        "street": "13737 St. Rt. 582",
+        "city": "Bowling Green",
+        "state": "OH",
+        "zip": "43402",
+        "descriptio": "forbs, ferns, grass/sedges, trees, shrubs",
+        "type": "Order via email or call (419) 833-2020 or visit!",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": true,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": true,
+        "wet_rest": true,
+        "organic": true,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": false,
+        "retail": true,
+        "comments": "Organic, native to upper Midwest; various sizes available",
+        "addrtype": "locality",
+        "addrlocat": "APPROXIMATE",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.6513229,
+          41.3747744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Cold Stream Farm",
+        "owner": "none listed",
+        "email": "none listed",
+        "number": "(231) 464-5809",
+        "sales": "none listed",
+        "gen_email": "none listed",
+        "sales_emai": "info@coldstreamfarm.net",
+        "website": "www.coldstreamfarm.net/",
+        "address": "8585 N. Stephens Rd. Free Soil, MI 49411",
+        "street": "8585 N. Stephens Rd.",
+        "city": "Free Soil",
+        "state": "MI",
+        "zip": "49411",
+        "descriptio": "bare root trees and shrubs",
+        "type": "Wholesale and retail. Order online, via phone, or mail orderform",
+        "pct_native": null,
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": false,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": true,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": false,
+        "organic": false,
+        "nat_specia": false,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.2006107,
+          44.1097786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Companion Plants, Inc.",
+        "owner": "Peter Borchard",
+        "email": "peter@companionplants.com",
+        "number": "740-592-4643",
+        "sales": "none listed",
+        "gen_email": "none listed",
+        "sales_emai": "sales@companionplants.com",
+        "website": "www.companionplants.com",
+        "address": "7247 N. Coolville Ridge Rd., Athens, OH 45701",
+        "street": "7247 N. Coolville Ridge Rd.",
+        "city": "Athens",
+        "state": "OH",
+        "zip": "45701",
+        "descriptio": "forbs, seeds",
+        "type": "Shop online or visit. Open to public March-October, by appointment otherwise.",
+        "pct_native": "25",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": false,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": false,
+        "organic": false,
+        "nat_specia": false,
+        "wholesale": false,
+        "app_web": false,
+        "retail": true,
+        "comments": "We specialize in useful plants - medical, culinary, etc.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.0390989,
+          39.29928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Keystone Flora",
+        "owner": "none listed",
+        "email": "none listed",
+        "number": "513.961.2727",
+        "sales": "none listed",
+        "gen_email": "none listed",
+        "sales_emai": "nativeplants@keystoneflora.com",
+        "website": "www.keystoneflora.com",
+        "address": "5081 Woodenshoe Hollow Lane Cincinnati, OH 45232",
+        "street": "5081 Woodenshoe Hollow Lane",
+        "city": "Cincinnati",
+        "state": "OH",
+        "zip": "45232",
+        "descriptio": "forbs, grasses, vines, shrubs, trees native to Ohio, Kentucky, Indiana",
+        "type": "Meet by appointment, call or email. Open Sat. & Tues. 10-3:00. Plant lists available on website.",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": false,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": true,
+        "nat_specia": true,
+        "wholesale": false,
+        "app_web": true,
+        "retail": false,
+        "comments": "Grown from 100% local native seed",
+        "addrtype": "street_address",
+        "addrlocat": "RANGE_INTERPOLATED",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.516005,
+          39.1822323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "North Creek Nursery",
+        "owner": "Steve Castorani",
+        "email": "steve@northcreeknurseries.com",
+        "number": "610-255-0100",
+        "sales": "Claudia West",
+        "gen_email": "info@northcreeknurseries.com",
+        "sales_emai": "claudia@northcreeknurseries.com",
+        "website": "www.northcreeknurseries.com/",
+        "address": "388 North Creek Road Landenberg, PA 19350",
+        "street": "388 North Creek Road",
+        "city": "Landenberg",
+        "state": "PA",
+        "zip": "19350",
+        "descriptio": "plugs of native eastern US perennials, ornamental grasses, ferns and vines",
+        "type": "Wholesale only.  $500 minimum for first time customers. Also scott@northcreeknurseries.com or info@northcreeknurseries.com",
+        "pct_native": "75",
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": false,
+        "shrubs": false,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": false,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.8096,
+          39.776126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Ohio Prairie Nursery",
+        "owner": "Bob & Sandy Kehres",
+        "email": "bob@opnseed.com",
+        "number": "866-569-3380",
+        "sales": "Bob/Dave",
+        "gen_email": "info@ohioprairienursery.com",
+        "sales_emai": "info@ohioprairienursery.com",
+        "website": "http://ohioprairienursery.com/",
+        "address": "11961 Alpha Rd, Hiram, OH 44234",
+        "street": "11961 Alpha Rd",
+        "city": "Hiram",
+        "state": "OH",
+        "zip": "44234",
+        "descriptio": "seeds (grasses, rushes, forbs)",
+        "type": "ORDERS TAKEN BY PHONE or On line Store",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": true,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": "We have an online store and we are also a native seed producer",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.161641,
+          41.319013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Pinelands",
+        "owner": "Don Knezick",
+        "email": "none listed",
+        "number": "609-291-9486",
+        "sales": "Fran Chismar",
+        "gen_email": "none listed",
+        "sales_emai": "sales@pinelandsnursery.com",
+        "website": "http://www.pinelandsnursery.com/p/home-page.html",
+        "address": "323 Island Road Columbus, NJ 08022",
+        "street": "323 Island Road",
+        "city": "Columbus",
+        "state": "NJ",
+        "zip": "8022",
+        "descriptio": "Wholesale only. Contact for catalog.",
+        "type": "Wholesale only",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": true,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": false,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.7046,
+          40.0673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Plant Delights, Inc.",
+        "owner": "Tony and Anita Avent",
+        "email": "tony@plantdelights.com",
+        "number": "919.772.4794",
+        "sales": "Jim Burgan",
+        "gen_email": "jim@plantdelights.com",
+        "sales_emai": "office@plantdelights.com",
+        "website": "http://www.plantdelights.com/",
+        "address": "9241 Sauls Road, Raleigh, NC 27603",
+        "street": "9241 Sauls Road",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27603",
+        "descriptio": "Only perennials",
+        "type": "Retail only. Visitors are welcome by appointment only.",
+        "pct_native": "40",
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": false,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": false,
+        "organic": true,
+        "nat_specia": true,
+        "wholesale": false,
+        "app_web": true,
+        "retail": false,
+        "comments": "We are a small, family owned, mail-order nursery, established in 1988, offering unique, rare, well-grown, and properly-named native and other perennials to passionate gardeners around the world.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.639563,
+          35.626352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Prairie Moon Nursery",
+        "owner": "Many",
+        "email": "rebecca@prairiemoon.com",
+        "number": "(866) 417-8156",
+        "sales": "Rebecca Brewer",
+        "gen_email": "rebecca@prairiemoon.com",
+        "sales_emai": "info@prairiemoon.com",
+        "website": "http://www.prairiemoon.com/",
+        "address": "32115 Prairie Lane Winona, MN 55987",
+        "street": "32115 Prairie Lane",
+        "city": "Winona",
+        "state": "MN",
+        "zip": "55987",
+        "descriptio": "Seeds, seed mixes, bare root plants, potted plants native to the upper midwest of the country",
+        "type": "Mail order nursery. Order online, by mail, or fax. Free color catalog and cultural guide available on website.",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": true,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": true,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": "We are neonicotinoid-free. Our plants are NOT wild-dug. We have been practicing a strict code of ethicsand genetic tracking since our inception in the early 1980's. We offer free seed mix design and prairie establishment email/phone consultations.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6369859,
+          43.902925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Scioto Gardens Landscape Nursery",
+        "owner": "Michael Johnson",
+        "email": "sales@sciotogardens.com",
+        "number": "740.363.8264",
+        "sales": "Michael Johnson",
+        "gen_email": "sales@sciotogardens.com",
+        "sales_emai": "sales@sciotogardens.com",
+        "website": "www.sciotogardens.com",
+        "address": "3351 OH-37 Delaware, OH 43015",
+        "street": "3351 OH-37",
+        "city": "Delaware",
+        "state": "OH",
+        "zip": "43015",
+        "descriptio": "perennials, ferns, grasses, shrubs, trees",
+        "type": "Nursery open to public. Plant list available online.",
+        "pct_native": "82",
+        "ohio_nativ": true,
+        "seed": false,
+        "plants": true,
+        "known_locs": false,
+        "grown_seed": true,
+        "clonal": true,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": true,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": true,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": false,
+        "app_web": false,
+        "retail": true,
+        "comments": "Plants are grown in real soil and compost in degradeable containers.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.133668,
+          40.317897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Spence Restoration Nursery",
+        "owner": "none listed",
+        "email": "none listed",
+        "number": "(765) 286-7154",
+        "sales": "Kevin Tungesvick",
+        "gen_email": "none listed",
+        "sales_emai": "Kevin@spencenursery.com",
+        "website": "http://www.spencenursery.com/",
+        "address": "2220 East Fuson Road Muncie, IN 47302",
+        "street": "2220 East Fuson Road",
+        "city": "Muncie",
+        "state": "IN",
+        "zip": "47302",
+        "descriptio": "Native Great Lake and Ohio Valley region seeds and plugs",
+        "type": "Wholesale only, no retail sales",
+        "pct_native": "100",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": false,
+        "woody": false,
+        "shrubs": false,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": false,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": false,
+        "retail": false,
+        "comments": "No neonicotinoids.",
+        "addrtype": "street_address",
+        "addrlocat": "ROOFTOP",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.359253,
+          40.152703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Taylor Creek Restoration Nurseries - Brodhead",
+        "owner": "Steven Apfelbaum",
+        "email": "none listed",
+        "number": "(608) 897-8641",
+        "sales": "Cindy Whitehead",
+        "gen_email": "tcrn@restorationnurseries.com",
+        "sales_emai": "nursery.service@appliedeco.com",
+        "website": "www.restorationnurseries.com/",
+        "address": "17921 Smith Road P.O. Box 256 Brodhead, WI 53520",
+        "street": "17921 Smith Road",
+        "city": "Brodhead",
+        "state": "WI",
+        "zip": "53520",
+        "descriptio": "seed, plug, and contract grow natives of the upper midwest",
+        "type": "Wholesale and retail. Retail Assistance and Sales by Appointment Only. Species list, catalog, and order forms found on website.",
+        "pct_native": "99",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": false,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": true,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "RANGE_INTERPOLATED",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.3533035,
+          42.5583235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nursery": "Taylor Creek Restoration Nurseries - Baldwin City",
+        "owner": "Steven Apfelbaum",
+        "email": "none listed",
+        "number": "(785) 594-2245",
+        "sales": "Elliott Duemler",
+        "gen_email": "krrn@restorationnurseries.com",
+        "sales_emai": "krrn@appliedeco.com",
+        "website": "www.restorationnurseries.com/",
+        "address": "1269 N 222nd Road, Baldwin City, KS 66006",
+        "street": "1269 N 222nd Road",
+        "city": "Baldwin City",
+        "state": "KS",
+        "zip": "66006",
+        "descriptio": "seed, plug, and contract grow natives of the upper midwest",
+        "type": "Wholesale Only. Sales by Appointment Only. Species list, catalog, and order forms found on website.",
+        "pct_native": "95",
+        "ohio_nativ": true,
+        "seed": true,
+        "plants": true,
+        "known_locs": true,
+        "grown_seed": true,
+        "clonal": false,
+        "herbaceous": true,
+        "ferns": true,
+        "woody": false,
+        "shrubs": true,
+        "bare_root": false,
+        "cont_trees": false,
+        "bb_trees": false,
+        "bio_mat": false,
+        "wet_rest": true,
+        "organic": true,
+        "nat_specia": true,
+        "wholesale": true,
+        "app_web": true,
+        "retail": false,
+        "comments": null,
+        "addrtype": "street_address",
+        "addrlocat": "RANGE_INTERPOLATED",
+        "marker-size": "small",
+        "marker-symbol": "garden",
+        "marker-color": "#203C01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.2668276,
+          38.7722431
+        ]
+      }
+    }
+  ]
+}
+];
+
+
+//Sets the starting pan and zoom locations and sets the base map
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([39.5, -84], 5)
+
+var markers = L.mapbox.featureLayer()
+    .setGeoJSON(geojson)
+    .addTo(map);
+	
+//Makes the filters work
+$('.options li a').on('click', function() {
+    // For each filter link, get the 'data-filter' attribute value.
+    var filter = $(this).data('filter');
+    $(this).addClass('active').siblings().removeClass('active');
+    markers.setFilter(function(f) {
+        // If the data-filter attribute is set to "all", return
+        // all (true). Otherwise, filter on markers that have
+        // a value set to true based on the filter name.
+        return (filter === 'all') ? true : f.properties[filter] === true;
+    });
+    return false;
+});
+
+// Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
+// above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
+// you will need to do this within a `featureLayer.on('ready'` event.
+markers.eachLayer(function(layer) {
+
+    // here you call `bindPopup` with a string of HTML you create - the feature
+    // properties declared above are available under `layer.feature.properties`
+    var content = '<h2>' + layer.feature.properties.nursery + '<\/h2>' +
+	'<p>'+ layer.feature.properties.address + '<br \/>'
+	+ layer.feature.properties.sales_emai + '<\/p>';
+	
+	
+    layer.bindPopup(content);
+});
+</script>
+
+
+</body>
+</html>
