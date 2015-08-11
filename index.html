@@ -2,189 +2,22 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Multiple filters on markers</title>
+<title>Native Plant Nursery</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
-<link href='style.css' rel='stylesheet' />
+<link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
+<link href='css/style.css' rel='stylesheet' />
 
 </head>
 <body>
 
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; right:0; width:80%; border-left:2px solid #777777; }
-
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-body {
-	font-family:arial, sans-serif;
-	font-weight:normal;
-	font-size:12px;
-	background:#3f4348 url('http://www.frecosse.com/workshop/accordion_menu/bg.png');
-}
-
-.accordian-menu {
-position:absolute;
-top:0;
-bottom:0;
-left:0;
-width:20%;
-height:inherit;
-overflow:auto;
-}
-
-ul {
-	list-style:none;
-	margin:0; 
-	padding:0;
-	-moz-box-shadow: 0 0 5px #111;
-	-webkit-box-shadow: 0 0 5px #111;
-	box-shadow: 0 0 5px #111;
-}
-
-ul li label {
-	background: #575e63; /* fallback colour */
-	border-top:1px solid #878e98;
-	border-bottom:1px solid #33373d;
-	color: #fff;
-	text-shadow: 0 1px 1px #000;
-	letter-spacing: 0.09em;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#575e63), to(#3f4347));
-	background: -webkit-linear-gradient(top, #575e63, #3f4347);
-	background: -moz-linear-gradient(top, #575e63, #3f4347);
-	background: -ms-linear-gradient(top, #575e63, #3f4347);
-	background: -o-linear-gradient(top, #575e63, #3f4347);
-}
-
-ul li input[type='checkbox'] {
-	display: none;
-}
-
-ul li label {
-	display:block;
-	padding:12px;
-	width:inherit;
-}
-
-ul li i {
-	font-size:18px;
-	vertical-align: middle;
-	width:20px;
-	display:inline-block;
-}
-
-ul li span {
-	display:inline;
-	float:right;
-	background:#48515c;
-	border:1px solid #3c434c;
-	border-bottom:1px solid #707781;
-	padding:4px 6px;
-	font-size:10px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: inset 0 0 10px #111;
-	-webkit-box-shadow: inset 0 0 10px #111;
-	box-shadow: inner 0 0 10px #111;
-	position:relative;
-}
-
-ul li label:hover {
-	background: #566f82; /* fallback colour */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
-	background: -webkit-linear-gradient(top, #566f82, #3e505e);
-	background: -moz-linear-gradient(top, #566f82, #3e505e);
-	background: -ms-linear-gradient(top, #566f82, #3e505e);
-	background: -o-linear-gradient(top, #566f82, #3e505e);
-}
-
-ul li label:hover span {
-	background:#3e505e;
-}
-
-ul li input[type='checkbox']:checked ~ label {
-	background: #44c6eb; /* fallback colour */
-	border-top:1px solid #878e98;
-	border-bottom:1px solid #71C177;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#44c6eb), to(#2799db));
-	background: -webkit-linear-gradient(top, #71C177, #3C8041);
-	background: -moz-linear-gradient(top, #71C177, #3C8041);
-	background: -ms-linear-gradient(top, #71C177, #3C8041);
-	background: -o-linear-gradient(top, #71C177, #3C8041);
-}
-
-ul li input[type='checkbox']:checked ~ label span {
-	background: #3C8041; /* fallback colour */
-	border-top:1px solid #111;
-	border-bottom:1px solid #71C177;
-	-moz-box-shadow: inset 0 0 5px #111;
-	-webkit-box-shadow: inset 0 0 5px #111;
-	box-shadow: inner 0 0 5px #111;
-}
-
-ul li input[type='checkbox']:checked ~ .options {
-	height: auto;
-	display:block;
-	min-height:40px;
-	max-height:400px;
-	width:inherit;
-}
-
-ul ul {
-	background:#fff; margin:0; padding:0;
-	-moz-box-shadow: inset 0 2px 2px #b3b3b3;
-	-webkit-box-shadow: inset 0 2px 2px #b3b3b3;
-	box-shadow: inner 0 2px 2px #b3b3b3;
-}
-
-ul ul li a {
-	display:block;
-	padding:6px 12px;
-	color:#999;
-	text-decoration:none;
-}
-
-ul ul li a:hover {
-	color:#71C177;
-}
-
-ul ul li a span {
-	color:#999;
-	background:none;
-	border:1px solid #ccc; 
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-
-ul ul li {
-	border-bottom:1px solid #ccc;
-}
-
-ul ul li:first-child {
-	padding-top:6px;
-}
-
-ul ul li:last-child {
-	padding-bottom:6px; border:0;
-}
-
-.options {
-	height: 0;
-	display: block;
-	overflow: hidden;
-}
-
-</style>
-
 <!-- jQuery is required for this example. -->
 <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
 
+<!--<div><a href="http://leapbio.org/" target="_blank"><img src="images/LEAP-logo-header.png" /></a></div>-->
+
+<h1>Native Plant Nurseries</h1>
 
 <div class="accordian-menu">
 <ul>
@@ -1092,7 +925,7 @@ var markers = L.mapbox.featureLayer()
     .setGeoJSON(geojson)
     .addTo(map);
 	
-//Makes the filters work
+	//Makes the filters work
 $('.options li a').on('click', function() {
     // For each filter link, get the 'data-filter' attribute value.
     var filter = $(this).data('filter');
@@ -1105,6 +938,7 @@ $('.options li a').on('click', function() {
     });
     return false;
 });
+	
 
 // Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
 // above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
@@ -1113,13 +947,21 @@ markers.eachLayer(function(layer) {
 
     // here you call `bindPopup` with a string of HTML you create - the feature
     // properties declared above are available under `layer.feature.properties`
-    var content = '<h2>' + layer.feature.properties.nursery + '<\/h2>' +
-	'<p>'+ layer.feature.properties.address + '<br \/>'
-	+ layer.feature.properties.sales_emai + '<\/p>';
+    var content = '<div id="popup-box-content">' + '<h2>' + layer.feature.properties.nursery + '<\/h2>' + 
+	'<table>' 
+	+ '<tr>' + '<td>' + '<span>Info: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.descriptio !== 'mull' ? layer.feature.properties.descriptio : "") + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Sales: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.type !== 'mull' ? layer.feature.properties.type : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'mull' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + layer.feature.properties.website : "") + '</a>' + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Number: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.number !== 'mull' ? layer.feature.properties.number : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Email: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.sales_emai !== 'mull' ? layer.feature.properties.sales_emai : "") + '<\/td>' + '<\/tr>' 
+	+ '<tr class="even-row">' + '<td>' + '<span>Address: <\/span>' + '<\/td>' + '<td>' +( layer.feature.properties.street !== 'mull' ? layer.feature.properties.street : "") + '<br \/>'
+	+ layer.feature.properties.city + ',' + ' ' + layer.feature.properties.state + ' ' + layer.feature.properties.zip + '<\/td>' + '<\/tr>' + '<\/div>'
+	+ '<\/table>';
 	
 	
     layer.bindPopup(content);
 });
+
 </script>
 
 
