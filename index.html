@@ -91,10 +91,6 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
-// In the propeties object for each marker define key's
-// like `rentals`, `fuel`, `tackleshop` that are set to true for false
-// depending on whether or they exist at a location.
-
 
 var geojson = [
 {
@@ -548,7 +544,7 @@ var geojson = [
         "sales": "Fran Chismar",
         "gen_email": "none listed",
         "sales_emai": "sales@pinelandsnursery.com",
-        "website": "http://www.pinelandsnursery.com/p/home-page.html",
+        "website": "http://www.pinelandsnursery.com",
         "address": "323 Island Road Columbus, NJ 08022",
         "street": "323 Island Road",
         "city": "Columbus",
@@ -921,50 +917,70 @@ var geojson = [
 ];
 
 
+//Sets a bounding box to restrict panning outside of the area of the map with data
+var southWest = L.latLng(33.064, -105.053),
+    northEast = L.latLng(50, -59.697),
+    bounds = L.latLngBounds(southWest, northEast);
+
 //Sets the starting pan and zoom locations and sets the base map
-var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([39.5, -84], 5)
+var map = L.mapbox.map('map', 'mapbox.streets', {
+	maxBounds: bounds,
+	maxZoom: 16,
+	minZoom: 5
+}).setView([30, -84], 5);
 
 var markers = L.mapbox.featureLayer()
     .setGeoJSON(geojson)
     .addTo(map);
 	
-	//Makes the filters work
-$('.options li a').on('click', function() {
-    // For each filter link, get the 'data-filter' attribute value.
-    var filter = $(this).data('filter');
-    $(this).addClass('active').siblings().removeClass('active');
-    markers.setFilter(function(f) {
-        // If the data-filter attribute is set to "all", return
-        // all (true). Otherwise, filter on markers that have
-        // a value set to true based on the filter name.
-        return (filter === 'all') ? true : f.properties[filter] === true;
-    });
-    return false;
-});
-	
 
-// Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
-// above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
-// you will need to do this within a `featureLayer.on('ready'` event.
+//Creates popups from geojson
 markers.eachLayer(function(layer) {
 
-    // here you call `bindPopup` with a string of HTML you create - the feature
-    // properties declared above are available under `layer.feature.properties`
     var content = '<div id="popup-box-content">' + '<h2>' + layer.feature.properties.nursery + '<\/h2>' + 
 	'<table>' 
-	+ '<tr>' + '<td>' + '<span>Info: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.descriptio !== 'mull' ? layer.feature.properties.descriptio : "") + '<\/td>' + '<\/tr>'
-	+ '<tr class="even-row">' + '<td>' + '<span>Sales: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.type !== 'mull' ? layer.feature.properties.type : "") + '<\/td>' + '<\/tr>'
-	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'mull' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + layer.feature.properties.website : "") + '</a>' + '<\/td>' + '<\/tr>'
-	+ '<tr class="even-row">' + '<td>' + '<span>Number: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.number !== 'mull' ? layer.feature.properties.number : "") + '<\/td>' + '<\/tr>'
-	+ '<tr>' + '<td>' + '<span>Email: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.sales_emai !== 'mull' ? layer.feature.properties.sales_emai : "") + '<\/td>' + '<\/tr>' 
-	+ '<tr class="even-row">' + '<td>' + '<span>Address: <\/span>' + '<\/td>' + '<td>' +( layer.feature.properties.street !== 'mull' ? layer.feature.properties.street : "") + '<br \/>'
+	+ '<tr>' + '<td>' + '<span>Info: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.descriptio !== 'null' ? layer.feature.properties.descriptio : "") + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Sales: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.type !== 'null' ? layer.feature.properties.type : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'null' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + layer.feature.properties.website : "") + '</a>' + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Number: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.number !== 'null' ? layer.feature.properties.number : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Email: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.sales_emai !== 'null' ? layer.feature.properties.sales_emai : "") + '<\/td>' + '<\/tr>' 
+	+ '<tr class="even-row">' + '<td>' + '<span>Address: <\/span>' + '<\/td>' + '<td>' +( layer.feature.properties.street !== 'null' ? layer.feature.properties.street : "") + '<br \/>'
 	+ layer.feature.properties.city + ',' + ' ' + layer.feature.properties.state + ' ' + layer.feature.properties.zip + '<\/td>' + '<\/tr>' + '<\/div>'
 	+ '<\/table>';
 	
-	
     layer.bindPopup(content);
 });
+
+
+	//Makes the filters work
+$('.options li a').on('click', function() {
+    var filter = $(this).data('filter');
+    $(this).addClass('active').siblings().removeClass('active');
+    markers.setFilter(function(f) {
+        return (filter === 'all') ? true : f.properties[filter] === true;
+    });
+	
+markers.eachLayer(function(layer) {
+
+    var content = '<div id="popup-box-content">' + '<h2>' + layer.feature.properties.nursery + '<\/h2>' + 
+	'<table>' 
+	+ '<tr>' + '<td>' + '<span>Info: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.descriptio !== 'null' ? layer.feature.properties.descriptio : "") + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Sales: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.type !== 'null' ? layer.feature.properties.type : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'null' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + layer.feature.properties.website : "") + '</a>' + '<\/td>' + '<\/tr>'
+	+ '<tr class="even-row">' + '<td>' + '<span>Number: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.number !== 'null' ? layer.feature.properties.number : "") + '<\/td>' + '<\/tr>'
+	+ '<tr>' + '<td>' + '<span>Email: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.sales_emai !== 'null' ? layer.feature.properties.sales_emai : "") + '<\/td>' + '<\/tr>' 
+	+ '<tr class="even-row">' + '<td>' + '<span>Address: <\/span>' + '<\/td>' + '<td>' +( layer.feature.properties.street !== 'null' ? layer.feature.properties.street : "") + '<br \/>'
+	+ layer.feature.properties.city + ',' + ' ' + layer.feature.properties.state + ' ' + layer.feature.properties.zip + '<\/td>' + '<\/tr>' + '<\/div>'
+	+ '<\/table>';
+	
+    layer.bindPopup(content);
+});	
+	
+	layer.bindPopup(content);
+    return false;
+});
+
+
 
 </script>
 
