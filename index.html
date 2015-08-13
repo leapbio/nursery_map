@@ -112,7 +112,7 @@ var geojson = [
         "sales": "none listed",
         "gen_email": "none listed",
         "sales_emai": "nurserysales@cardno.com",
-        "website": "www.cardnojfnew.com/",
+        "website": "http://www.cardnonativeplantnursery.com/",
         "address": "128 Sunset Dr Walkerton, IN 46574",
         "street": "128 Sunset Dr",
         "city": "Walkerton",
@@ -166,7 +166,7 @@ var geojson = [
         "sales": "Annette Howard",
         "gen_email": "annette@gilsongardens.biz",
         "sales_emai": "sales@gilsongardens.biz",
-        "website": "www.gilsongardens.biz",
+        "website": "http://www.gilsongardens.biz",
         "address": "3059 N Ridge Rd. Perry, OH 44081",
         "street": "3059 N Ridge Rd.",
         "city": "Perry",
@@ -220,7 +220,7 @@ var geojson = [
         "sales": "Jan Hunter",
         "gen_email": "nnn@naturallynative.net",
         "sales_emai": "nnn@naturallynative.net",
-        "website": "www.naturallynative.net",
+        "website": "http://www.naturallynative.net",
         "address": "13737 St. Rt. 582, Bowling Green, OH 43402",
         "street": "13737 St. Rt. 582",
         "city": "Bowling Green",
@@ -274,7 +274,7 @@ var geojson = [
         "sales": "none listed",
         "gen_email": "none listed",
         "sales_emai": "info@coldstreamfarm.net",
-        "website": "www.coldstreamfarm.net/",
+        "website": "http://www.coldstreamfarm.net/",
         "address": "8585 N. Stephens Rd. Free Soil, MI 49411",
         "street": "8585 N. Stephens Rd.",
         "city": "Free Soil",
@@ -328,7 +328,7 @@ var geojson = [
         "sales": "none listed",
         "gen_email": "none listed",
         "sales_emai": "sales@companionplants.com",
-        "website": "www.companionplants.com",
+        "website": "http://www.companionplants.com",
         "address": "7247 N. Coolville Ridge Rd., Athens, OH 45701",
         "street": "7247 N. Coolville Ridge Rd.",
         "city": "Athens",
@@ -382,7 +382,7 @@ var geojson = [
         "sales": "none listed",
         "gen_email": "none listed",
         "sales_emai": "nativeplants@keystoneflora.com",
-        "website": "www.keystoneflora.com",
+        "website": "http://www.keystoneflora.com",
         "address": "5081 Woodenshoe Hollow Lane Cincinnati, OH 45232",
         "street": "5081 Woodenshoe Hollow Lane",
         "city": "Cincinnati",
@@ -436,7 +436,7 @@ var geojson = [
         "sales": "Claudia West",
         "gen_email": "info@northcreeknurseries.com",
         "sales_emai": "claudia@northcreeknurseries.com",
-        "website": "www.northcreeknurseries.com/",
+        "website": "http://www.northcreeknurseries.com/",
         "address": "388 North Creek Road Landenberg, PA 19350",
         "street": "388 North Creek Road",
         "city": "Landenberg",
@@ -706,7 +706,7 @@ var geojson = [
         "sales": "Michael Johnson",
         "gen_email": "sales@sciotogardens.com",
         "sales_emai": "sales@sciotogardens.com",
-        "website": "www.sciotogardens.com",
+        "website": "http://www.sciotogardens.com",
         "address": "3351 OH-37 Delaware, OH 43015",
         "street": "3351 OH-37",
         "city": "Delaware",
@@ -814,7 +814,7 @@ var geojson = [
         "sales": "Cindy Whitehead",
         "gen_email": "tcrn@restorationnurseries.com",
         "sales_emai": "nursery.service@appliedeco.com",
-        "website": "www.restorationnurseries.com/",
+        "website": "http://www.restorationnurseries.com/",
         "address": "17921 Smith Road P.O. Box 256 Brodhead, WI 53520",
         "street": "17921 Smith Road",
         "city": "Brodhead",
@@ -868,7 +868,7 @@ var geojson = [
         "sales": "Elliott Duemler",
         "gen_email": "krrn@restorationnurseries.com",
         "sales_emai": "krrn@appliedeco.com",
-        "website": "www.restorationnurseries.com/",
+        "website": "http://www.restorationnurseries.com/",
         "address": "1269 N 222nd Road, Baldwin City, KS 66006",
         "street": "1269 N 222nd Road",
         "city": "Baldwin City",
@@ -941,7 +941,11 @@ markers.eachLayer(function(layer) {
 	'<table>' 
 	+ '<tr>' + '<td>' + '<span>Info: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.descriptio !== 'null' ? layer.feature.properties.descriptio : "") + '<\/td>' + '<\/tr>'
 	+ '<tr class="even-row">' + '<td>' + '<span>Sales: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.type !== 'null' ? layer.feature.properties.type : "") + '<\/td>' + '<\/tr>'
-	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'null' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + layer.feature.properties.website : "") + '</a>' + '<\/td>' + '<\/tr>'
+	
+	
+	+ '<tr>' + '<td>' + '<span>Website: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.website !== 'null' ? '<a href="' + layer.feature.properties.website + '" target="_blank">' + 'click here' : "") + '</a>' + '<\/td>' + '<\/tr>'
+	
+	
 	+ '<tr class="even-row">' + '<td>' + '<span>Number: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.number !== 'null' ? layer.feature.properties.number : "") + '<\/td>' + '<\/tr>'
 	+ '<tr>' + '<td>' + '<span>Email: <\/span>' + '<\/td>' + '<td>' + ( layer.feature.properties.sales_emai !== 'null' ? layer.feature.properties.sales_emai : "") + '<\/td>' + '<\/tr>' 
 	+ '<tr class="even-row">' + '<td>' + '<span>Address: <\/span>' + '<\/td>' + '<td>' +( layer.feature.properties.street !== 'null' ? layer.feature.properties.street : "") + '<br \/>'
