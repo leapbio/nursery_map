@@ -183,11 +183,11 @@ var geojson = [
         "gen_email": "nnn@naturallynative.net",
         "sales_emai": "nnn@naturallynative.net",
         "website": "http://www.naturallynative.net",
-        "address": "13737 St. Rt. 582, Bowling Green, OH 43402",
-        "street": "13737 St. Rt. 582",
-        "city": "Bowling Green",
-        "state": "OH",
-        "zip": "43402",
+        "address": "20525 Johnson Rd, South Bend, IN 46614",
+        "street": "20525 Johnson Rd",
+        "city": "South Bend",
+        "state": "IN",
+        "zip": "46614",
         "descriptio": "forbs, ferns, grass/sedges, trees, shrubs",
         "type": "Order via email or call (419) 833-2020 or visit!",
         "pct_native": "100",
@@ -221,8 +221,8 @@ var geojson = [
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.6513229,
-          41.3747744
+          -86.2538159,
+          41.6166118
         ]
       }
     },
