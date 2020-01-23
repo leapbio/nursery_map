@@ -14,7 +14,7 @@ var geojson = [
       "type": "Feature",
       "properties": {
         "nursery": "Native Roots, Inc.",
-        "owner": "Sonia Binghamton",
+        "owner": "Sonia Bingham",
         "email": "sonia.bingham@nativeroots.com",
         "number": "330-704-5735",
         "sales": "Sonia Bingham",
