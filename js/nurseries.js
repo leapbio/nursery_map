@@ -1025,6 +1025,7 @@ markers.eachLayer(function(layer) {
 
 // Create array of lat,lon points.
 var line_points = [
+[40.90153052205019, -81.88792299659391],
 [40.567111,-82.120029],
 [40.567405,-82.124103],
 [40.567659,-82.126463],
