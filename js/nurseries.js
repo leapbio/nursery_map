@@ -76,9 +76,8 @@ var geoJson = ({
           41.6166118
         ]
       }
-    },{
-    'type': 'FeatureCollection',
-    'features': {
+    },
+	  {
                 'type': 'Feature',
                 'properties': {
                     'Timestamp': '10/21/2019 12:28:29',
