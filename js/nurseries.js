@@ -129,8 +129,8 @@ var geoJson = ({
         "Zip": 46614,
         "Keep": "forbs, ferns, grass/sedges, trees, shrubs",
         "Type": "Order via email or call (419) 833-2020 or visit!",
-        "Latitude": 41.6166118,
-        "Longitude": -86.2538159,
+        "Latitude": 41.616615,
+        "Longitude": -86.253819,
         "Owner_Con": "Jan Hunter",
         "Sales_Con": "Jan Hunter",
         "General E": "nnn@naturallynative.net",
@@ -142,8 +142,8 @@ var geoJson = ({
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -86.2538150,
-          41.6166110
+          -86.253819,
+          41.6166150
         ]
       }
     }, 
