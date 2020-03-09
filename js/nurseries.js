@@ -149,6 +149,39 @@ var geoJson = ({
         ]
       }
     },
+	 {
+      "type": "Feature",
+      "properties": {
+        "Nursery": "Bold Stream Farm",
+        "Contact_Email": "mull",
+        "Contact_Number": "(231) 464-5809",
+        "State": "MI",
+        "Address": "8585 N. Stephens Rd. Free Soil, MI 49411",
+        "Street": "8585 N. Stephens Rd.",
+        "City": "Free Soil",
+        "State_1": "MI",
+        "Zip": 49411,
+        "Keep": "bare root trees and shrubs",
+        "Type": "Wholesale and retail. Order online, via phone, or mail orderform",
+        "Latitude": 44.109779,
+        "Longitude": -86.200611,
+        "Owner_Con": "mull",
+        "Sales_Con": "mull",
+        "General E": "mull",
+        "Facebook": "www.coldstreamfarm.net",
+        "marker-color": "#254503",
+        "marker-size": "small",
+        "marker-symbol": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.200600,
+          44.109785
+        ]
+      }
+    },
+	  
     {
       "type": "Feature",
       "properties": {
