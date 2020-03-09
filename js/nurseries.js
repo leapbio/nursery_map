@@ -76,9 +76,8 @@ var geoJson = ({
           41.6166118
         ]
       }
-    },
-	 {
-
+    }, 
+    {
         "type": "Feature",
         "properties": {
         "Timestamp": "10/21/2019 12:28:29",
@@ -107,16 +106,15 @@ var geoJson = ({
 	"marker-color": "#254503",
         "marker-size": "small",
         "marker-symbol": "garden"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-		-81.88792299659391, 
-		40.90153052205019
-		]
-             }
-            },
-	  
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+	  -81.88792299659391, 
+	  40.90153052205019
+	  ]
+        }
+    },	  
     {
       "type": "Feature",
       "properties": {
@@ -148,40 +146,7 @@ var geoJson = ({
           44.109779
         ]
       }
-    },
-	 {
-      "type": "Feature",
-      "properties": {
-        "Nursery": "Bold Stream Farm",
-        "Contact_Email": "mull",
-        "Contact_Number": "(231) 464-5809",
-        "State": "MI",
-        "Address": "8585 N. Stephens Rd. Free Soil, MI 49411",
-        "Street": "8585 N. Stephens Rd.",
-        "City": "Free Soil",
-        "State_1": "MI",
-        "Zip": 49411,
-        "Keep": "bare root trees and shrubs",
-        "Type": "Wholesale and retail. Order online, via phone, or mail orderform",
-        "Latitude": 44.109779,
-        "Longitude": -86.200611,
-        "Owner_Con": "mull",
-        "Sales_Con": "mull",
-        "General E": "mull",
-        "Facebook": "www.coldstreamfarm.net",
-        "marker-color": "#254503",
-        "marker-size": "small",
-        "marker-symbol": "garden"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.200600,
-          44.109785
-        ]
-      }
-    },
-	  
+    },  
     {
       "type": "Feature",
       "properties": {
@@ -213,7 +178,7 @@ var geoJson = ({
           39.29928
         ]
       }
-    },
+    },	  
     {
       "type": "Feature",
       "properties": {
