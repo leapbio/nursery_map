@@ -114,7 +114,39 @@ var geoJson = ({
 	  40.901530
 	  ]
         }
-    },	  
+    },
+	  {
+      "type": "Feature",
+      "properties": {
+        "Nursery": "Naturally Potato",
+        "Contact_Email": "nnn@naturallyPotato.net",
+        "Contact_Number": "(419) 833-2020",
+        "State": "OH",
+        "Address": "20525 Johnson Rd, South Bend, IN 46614",
+        "Street": "20525 Johnson Rd",
+        "City": "South Bend",
+        "State_1": "IN",
+        "Zip": 46614,
+        "Keep": "forbs, ferns, grass/sedges, trees, shrubs",
+        "Type": "Order via email or call (419) 833-2020 or visit!",
+        "Latitude": 41.6166118,
+        "Longitude": -86.2538159,
+        "Owner_Con": "Jan Hunter",
+        "Sales_Con": "Jan Hunter",
+        "General E": "nnn@naturallynative.net",
+        "Facebook": "www.naturallynative.net",
+        "marker-color": "#254503",
+        "marker-size": "small",
+        "marker-symbol": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.2538150,
+          41.6166110
+        ]
+      }
+    }, 
     {
       "type": "Feature",
       "properties": {
