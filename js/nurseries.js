@@ -472,38 +472,6 @@ var geoJson = ({
     {
       "type": "Feature",
       "properties": {
-        "Nursery": "Taylor Creek Restoration Nurseries - Brodhead",
-        "Contact_Email": "mull",
-        "Contact_Number": "(608) 897-8641",
-        "State": "WI",
-        "Address": "17921 Smith Road P.O. Box 256 Brodhead, WI 53520",
-        "Street": "17921 Smith Road",
-        "City": "Brodhead",
-        "State_1": "WI",
-        "Zip": 53520,
-        "Keep": "seed, plug, and contract grow natives of the upper midwest",
-        "Type": "Wholesale and retail. Retail Assistance and Sales by Appointment Only. Species list, catalog, and order forms found on website.",
-        "Latitude": 42.558323,
-        "Longitude": -89.353304,
-        "Owner_Con": "Steven Apfelbaum",
-        "Sales_Con": "Cindy Whitehead",
-        "General E": "tcrn@restorationnurseries.com",
-        "Facebook": "www.restorationnurseries.com",
-        "marker-color": "#254503",
-        "marker-size": "small",
-        "marker-symbol": "garden"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.353304,
-          42.558323
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "Nursery": "Genius Loci, inc",
         "Contact_Email": "craiglimpach@gmail.com",
         "Contact_Number": "440-324-3465",
