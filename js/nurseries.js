@@ -129,7 +129,7 @@ var geoJson = ({
                 'Preferred_Contact': 'Phone, Email',
                 'Notes': 'This is a test',
                 'Questions and comments': 'Do you even host brah?',
-                'Zip': 44677,
+                'Zip': 44144,
                 'point': (40.90153052205019, -81.88792299659391, 0.0),
                 'Latitude': 40.90153052205019,
                 'Longitude': -81.88792299659391,
