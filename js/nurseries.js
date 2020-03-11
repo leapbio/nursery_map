@@ -77,26 +77,26 @@ var geoJson = ({
         ]
       }
     },
-    {
+   	 {
       "type": "Feature",
       "properties": {
         "Nursery": "Naturally Potato",
         "Contact_Email": "nnn@naturallyPotato.net",
-        "Contact_Number": "(419) 833-2020",
-        "State": "OH",
-        "Address": "20525 Johnson Rd, South Bend, IN 46614",
-        "Street": "20525 Johnson Rd",
-        "City": "South Bend",
+        "Contact_Number": "(414) 833-2020",
+        "State": "IN",
+        "Address": "27056 New Rd, North Liberty, IN 46554",
+        "Street": "27056 New Rd",
+        "City": "North Liberty",
         "State_1": "IN",
-        "Zip": 46614,
+        "Zip": 46554,
         "Keep": "forbs, ferns, grass/sedges, trees, shrubs",
         "Type": "Order via email or call (419) 833-2020 or visit!",
-        "Latitude": 41.616615,
-        "Longitude": -86.253819,
+        "Latitude": 41.563662,
+        "Longitude": -86.388569,
         "Owner_Con": "Jan Hunter",
         "Sales_Con": "Jan Hunter",
-        "General E": "nnn@naturallynative.net",
-        "Facebook": "www.naturallynative.net",
+        "General E": "nnn@naturallyPotato.net",
+        "Facebook": "www.naturallyPotato.net",
         "marker-color": "#254503",
         "marker-size": "small",
         "marker-symbol": "garden"
@@ -104,11 +104,11 @@ var geoJson = ({
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -86.253819,
-          41.6166150
+          -86.388569,
+          41.563662
         ]
       }
-    }, 
+    },   
     {
       "type": "Feature",
       "properties": {
