@@ -97,9 +97,6 @@ var geoJson = ({
                 "Sales_Con": "Jan Hunter",
                 "General E": "nnn@naturallyPotato.net",
                 "Facebook": "www.naturallyPotato.net",
-                "marker-color": "#254503",
-                "marker-size": "large",
-                "marker-symbol": "garden"
             },
             "geometry": {
                 "type": "Point",
