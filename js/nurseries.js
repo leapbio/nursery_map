@@ -78,7 +78,7 @@ var geoJson = ({
             }
         },
 
-[   {
+  {
             "type": "Feature",
             "properties": {
                 "Timestamp": "10/21/2019 12:28:29",
@@ -678,8 +678,8 @@ var geoJson = ({
                 "type": "Point",
                 "coordinates": [-81.71776942307693, 41.44318094230769]
             }
-        }
-],        
+        },
+                 
         {
             "type": "Feature",
             "properties": {
