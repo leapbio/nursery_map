@@ -597,7 +597,7 @@ var geoJson = ({
                 "Contact_Number": "937-935-3970",
                 "Contact_Email": "starfarmsnatives@gmail.com",
                 "Preferred_Contact": "Phone, Email",
-                "Notes": "contact information is available at\\nwww.ohionativegrowers.org\\nFaceBook @starfarmsnativeplants",
+                "Notes": "contact information is available at www.ohionativegrowers.org FaceBook @starfarmsnativeplants",
                 "Questions and comments": nan,
                 "Zip": 43326.0,
                 "Facebook": nan,
