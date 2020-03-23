@@ -1493,7 +1493,7 @@ var geoJson = ({
                 "City": "North Royalton",
                 "State_1": "OH",
                 "Zip": 44133,
-                "Keep": "6 acres of perennials, trees and shrubs. �If we do not have it in stock we can get it in within a week or two.",
+                "Keep": "6 acres of perennials, trees and shrubs. If we do not have it in stock we can get it in within a week or two.",
                 "Type": "Retail & Wholesale",
                 "Latitude": 41.320158,
                 "Longitude": -81.733824,
