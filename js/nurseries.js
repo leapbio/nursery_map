@@ -78,7 +78,7 @@ var geoJson = ({
                 ]
             }
         },
-        
+        {
             "type": "Feature",
             "properties": {
                 "Nursery": "Cold Stream Farm",
