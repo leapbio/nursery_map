@@ -6,7 +6,11 @@ var southWest = L.latLng(33.064,
         -69.697),
     bounds = L.latLngBounds(southWest, northEast);
 
-var map = L.mapbox.map('map')
+var map = L.mapbox.map('map', {
+    maxBounds: bounds,
+    maxZoom: 16,
+    minZoom: 5
+})
 .setView([40, -81], 5)
 .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
 
