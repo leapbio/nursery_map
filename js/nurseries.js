@@ -6,12 +6,13 @@ var southWest = L.latLng(33.064,
         -69.697),
     bounds = L.latLngBounds(southWest, northEast);
 
-var map = new mapboxgl.Map({
+/*Mapbox GL Syntax*/
+/*var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
   center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
   zoom: 13
-});
+});*/
 
 /*working*/
 /*var map = L.mapbox.map('map', 'mapbox://styles/mapbox/outdoors-v11', {
@@ -23,6 +24,16 @@ var map = new mapboxgl.Map({
     -81
 ],
     5);*/
+
+var map = L.mapbox.map('map', 'mapbox.mapbox-streets-v8', {
+    maxBounds: bounds,
+    maxZoom: 16,
+    minZoom: 5
+}).setView([
+    40,
+    -81
+],
+    5);
 
 /*(does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
