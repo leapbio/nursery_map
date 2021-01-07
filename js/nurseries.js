@@ -15,7 +15,7 @@ var southWest = L.latLng(33.064,
 .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 
-var map = L.mapbox.map('map', mapbox://styles/mapbox/outdoors-v11, {
+var map = L.mapbox.map('map', 'mapbox://styles/mapbox/outdoors-v11', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
