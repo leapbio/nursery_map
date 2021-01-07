@@ -15,7 +15,7 @@ var southWest = L.latLng(33.064,
 });*/
 
 /*working*/
-/*var map = L.mapbox.map('map', 'mapbox://styles/mapbox/outdoors-v11', {
+/*var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -25,7 +25,7 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-var map = L.mapbox.map('map', 'mapbox.mapbox-streets-v8', {
+var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -7907,3 +7907,6 @@ var polyline_options = {
 // endpoints and fill the path.
 // http://leafletjs.com/reference.html#polygon
 var polyline = L.polyline((L.GeoJSON.coordsToLatLngs(line_points, reverse = false)), polyline_options).addTo(map);
+
+var featureLayer = L.mapbox.featureLayer('mapbox.mapbox-streets-v8')
+  .addTo(map);
