@@ -6,8 +6,8 @@ var southWest = L.latLng(33.064,
         -69.697),
     bounds = L.latLngBounds(southWest, northEast);
 
-
-/*(working)var map = L.mapbox.map('map', 'mapbox://styles/mapbox/outdoors-v11', {
+/*working*/
+var map = L.mapbox.map('map', 'mapbox://styles/mapbox/outdoors-v11', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -15,11 +15,11 @@ var southWest = L.latLng(33.064,
     40,
     -81
 ],
-    5);*/
+    5);
 
-var map = L.mapbox.map('map')
+/*(does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/cleveland-metroparks/cisvvmgwe00112xlk4jnmrehn'));
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/cleveland-metroparks/cisvvmgwe00112xlk4jnmrehn'));*/
 
 var geoJson = ({
     "type": "FeatureCollection",
