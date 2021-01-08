@@ -15,7 +15,7 @@ var southWest = L.latLng(33.064,
 });*/
 
 /*working*/
-/*var map = L.mapbox.map('map', 'mapbox.satellite', {
+var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -23,11 +23,7 @@ var southWest = L.latLng(33.064,
     40,
     -81
 ],
-    5);*/
-
-var map = L.mapbox.map('map')
-    .setView([40, -81], 5)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+    5);
 
 
 /*(does not work?)var map = L.mapbox.map('map')
