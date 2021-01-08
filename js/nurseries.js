@@ -25,7 +25,7 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-L.map('map')
+L.mapbox.map('map')
   .setView([38.8929, -77.0252], 14)
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
 
