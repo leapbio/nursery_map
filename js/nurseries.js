@@ -38,7 +38,7 @@ var southWest = L.latLng(33.064,
 
 var map = L.mapbox.map('map').setView([40,
     -81], 15);
-L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11').addTo(map);
+L.mapbox.styleLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png').addTo(map);
 
 /*var map = L.map('map').setView([40, -81], 15);
 L.marker([40, -81])
