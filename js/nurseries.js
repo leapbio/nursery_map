@@ -1,5 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
-/*token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';*/
+token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
 
 var southWest = L.latLng(33.064,
     -99.053),
@@ -32,7 +32,7 @@ L.marker([38.912753, -77.032194])
     .addTo(map)
     .openPopup();
 var gl = L.mapboxGL({
-    accessToken: L.mapbox.accessToken,
+    accessToken: token,
     style: 'mapbox://styles/mapbox/streets-v11'
 }).addTo(map);
 
