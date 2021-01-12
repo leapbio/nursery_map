@@ -15,7 +15,7 @@ var southWest = L.latLng(33.064,
 });*/
 
 /*working*/
-var map = L.mapbox.map('map', 'mapbox.satellite', {
+/*var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -23,7 +23,17 @@ var map = L.mapbox.map('map', 'mapbox.satellite', {
     40,
     -81
 ],
-    5);
+    5);*/
+
+var map = L.map('map').setView([38.912753, -77.032194], 15);
+L.marker([38.912753, -77.032194])
+    .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
+    .addTo(map)
+    .openPopup();
+var gl = L.mapboxGL({
+    accessToken: token,
+    style: 'mapbox://styles/mapbox/bright-v8'
+}).addTo(map);
 
 /*L.mapbox.map('map')
   .setView([38.8929, -77.0252], 14)
