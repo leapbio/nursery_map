@@ -32,7 +32,7 @@ var southWest = L.latLng(33.064,
 
 (does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/cleveland-metroparks/cisvvmgwe00112xlk4jnmrehn'));
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
 
 var geoJson = ({
     "type": "FeatureCollection",
