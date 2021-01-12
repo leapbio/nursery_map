@@ -11,7 +11,7 @@ var southWest = L.latLng(33.064,
 /*var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-  center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
+  center: [40, -81], // starting position as [lng, lat]
   zoom: 13
 });*/
 
@@ -37,12 +37,12 @@ L.marker([40, -81])
 var gl = L.mapboxGL({
     accessToken: token,
     // get your own MapTiler token at https://cloud.maptiler.com/ or use MapBox style
-    style: 'mapbox.satellite'
+    style: 'mapbox://styles/mapbox/streets-v11'
 }).addTo(map);
 
 
-/*var map = L.map('map').setView([-21.9270884, 64.1436456], 15);
-L.marker([-21.9270884, 64.1436456])
+/*var map = L.map('map').setView([40, -81], 15);
+L.marker([40, -81])
     .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
     .addTo(map)
     .openPopup();
@@ -52,7 +52,7 @@ var gl = L.mapboxGL({
 }).addTo(map);*/
 
 /*L.mapbox.map('map')
-  .setView([-21.9270884, 64.1436456], 14)
+  .setView([40, -81], 14)
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 
