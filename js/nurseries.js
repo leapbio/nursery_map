@@ -25,14 +25,14 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-L.mapbox.map('map')
+/*L.mapbox.map('map')
   .setView([38.8929, -77.0252], 14)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 
-/*(does not work?)var map = L.mapbox.map('map')
+(does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/cleveland-metroparks/cisvvmgwe00112xlk4jnmrehn'));*/
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/cleveland-metroparks/cisvvmgwe00112xlk4jnmrehn'));
 
 var geoJson = ({
     "type": "FeatureCollection",
