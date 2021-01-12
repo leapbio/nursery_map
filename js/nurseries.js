@@ -7,12 +7,12 @@ var southWest = L.latLng(33.064,
     bounds = L.latLngBounds(southWest, northEast);
 
 /*Mapbox GL Syntax*/
-/*var map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
   center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
   zoom: 13
-});*/
+});
 
 /*working*/
 /*var map = L.mapbox.map('map', 'mapbox.satellite', {
@@ -30,9 +30,9 @@ var southWest = L.latLng(33.064,
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 
-(does not work?)var map = L.mapbox.map('map')
+/*(does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 var geoJson = ({
     "type": "FeatureCollection",
