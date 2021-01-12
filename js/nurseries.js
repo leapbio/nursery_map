@@ -26,7 +26,7 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-var map = L.mapbox.map('map' {
+var map = L.mapbox.map('map', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
