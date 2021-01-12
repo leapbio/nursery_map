@@ -37,7 +37,7 @@ L.marker([40, -81])
 var gl = L.mapboxGL({
     accessToken: token,
     // get your own MapTiler token at https://cloud.maptiler.com/ or use MapBox style
-    style: 'https://api.maptiler.com/maps/topo/style.json?key=gbetYLSD5vR8MdtZ88AQ'
+    style: 'https://api.maptiler.com/maps/streets/?key=spN7M9DPfm6cJ1THMQZI#1.3/0.00000/0.00000'
 }).addTo(map);
 
 
