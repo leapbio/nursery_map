@@ -27,9 +27,9 @@ var southWest = L.latLng(33.064,
     5);*/
 
 
-var map = L.map('map').setView([38.912753, -77.032194], 15);
+var map = L.map('map').setView([-21.9270884, 64.1436456], 15);
 
-L.marker([38.912753, -77.032194])
+L.marker([-21.9270884, 64.1436456])
     .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
     .addTo(map)
     .openPopup();
@@ -41,8 +41,8 @@ var gl = L.mapboxGL({
 }).addTo(map);
 
 
-/*var map = L.map('map').setView([38.912753, -77.032194], 15);
-L.marker([38.912753, -77.032194])
+/*var map = L.map('map').setView([-21.9270884, 64.1436456], 15);
+L.marker([-21.9270884, 64.1436456])
     .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
     .addTo(map)
     .openPopup();
@@ -52,7 +52,7 @@ var gl = L.mapboxGL({
 }).addTo(map);*/
 
 /*L.mapbox.map('map')
-  .setView([38.8929, -77.0252], 14)
+  .setView([-21.9270884, 64.1436456], 14)
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
 
