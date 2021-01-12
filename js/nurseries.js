@@ -27,9 +27,9 @@ var southWest = L.latLng(33.064,
     5);*/
 
 
-var map = L.map('map').setView([-21.9270884, 64.1436456], 15);
+var map = L.map('map').setView([40, -81], 15);
 
-L.marker([-21.9270884, 64.1436456])
+L.marker([40, -81])
     .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
     .addTo(map)
     .openPopup();
