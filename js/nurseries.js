@@ -32,7 +32,7 @@ L.marker([38.912753, -77.032194])
     .openPopup();
 var gl = L.mapboxGL({
     accessToken: token,
-    style: 'mapbox://styles/mapbox/bright-v8'
+    style: 'mapbox.satellite'
 }).addTo(map);
 
 /*L.mapbox.map('map')
