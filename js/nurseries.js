@@ -26,7 +26,7 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-/*var map = L.mapbox.map('map', 'mapbox.satellite', {
+var map = L.mapbox.map('map', 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -34,11 +34,7 @@ var southWest = L.latLng(33.064,
     40,
     -81
 ],
-    5);*/
-
-var map = L.mapbox.map('map').setView([40,
-    -81], 15);
-L.mapbox.styleLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png').addTo(map);
+    5);
 
 /*var map = L.map('map').setView([40, -81], 15);
 L.marker([40, -81])
