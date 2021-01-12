@@ -26,7 +26,22 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
+
 var map = L.map('map').setView([38.912753, -77.032194], 15);
+
+L.marker([38.912753, -77.032194])
+    .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
+    .addTo(map)
+    .openPopup();
+
+var gl = L.mapboxGL({
+    accessToken: token,
+    // get your own MapTiler token at https://cloud.maptiler.com/ or use MapBox style
+    style: 'https://api.maptiler.com/maps/topo/style.json?key=gbetYLSD5vR8MdtZ88AQ'
+}).addTo(map);
+
+
+/*var map = L.map('map').setView([38.912753, -77.032194], 15);
 L.marker([38.912753, -77.032194])
     .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
     .addTo(map)
@@ -34,7 +49,7 @@ L.marker([38.912753, -77.032194])
 var gl = L.mapboxGL({
     accessToken: token,
     style: 'mapbox.satellite'
-}).addTo(map);
+}).addTo(map);*/
 
 /*L.mapbox.map('map')
   .setView([38.8929, -77.0252], 14)
