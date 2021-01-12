@@ -16,7 +16,7 @@ var southWest = L.latLng(33.064,
 });*/
 
 /*working*/
-var map = L.mapbox.map('map', 'mapbox.satellite', {
+/*var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
@@ -24,9 +24,21 @@ var map = L.mapbox.map('map', 'mapbox.satellite', {
     40,
     -81
 ],
-    5);
+    5);*/
 
+/*var map = L.mapbox.map('map', 'mapbox.satellite', {
+    maxBounds: bounds,
+    maxZoom: 16,
+    minZoom: 5
+}).setView([
+    40,
+    -81
+],
+    5);*/
 
+var map = L.mapbox.map('map').setView([40,
+    -81], 15);
+L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11').addTo(map);
 
 /*var map = L.map('map').setView([40, -81], 15);
 L.marker([40, -81])
