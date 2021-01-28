@@ -1,4 +1,4 @@
-L.mapbox.accessToken = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
+
 token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
 
 var southWest = L.latLng(33.064,
@@ -15,16 +15,6 @@ var map = new mapboxgl.Map({
   zoom: 13
 });
 
-/*working*/
-/*var map = L.mapbox.map('map', 'mapbox.satellite', {
-    maxBounds: bounds,
-    maxZoom: 16,
-    minZoom: 5
-}).setView([
-    40,
-    -81
-],
-    5);*/
 
 
 var geoJson = ({
