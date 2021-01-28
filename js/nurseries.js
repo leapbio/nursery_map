@@ -27,9 +27,6 @@ var map = new mapboxgl.Map({
     5);*/
 
 
-  .setView([40,-81], 16)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
-
 var geoJson = ({
     "type": "FeatureCollection",
     "features": [{
