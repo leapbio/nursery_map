@@ -8,12 +8,12 @@ var southWest = L.latLng(33.064,
     bounds = L.latLngBounds(southWest, northEast);
 
 /*Mapbox GL Syntax*/
-/*var map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-  center: [40, -81], // starting position as [lng, lat]
+  center: [-81, 40], // starting position as [lng, lat]
   zoom: 13
-});*/
+});
 
 /*working*/
 /*var map = L.mapbox.map('map', 'mapbox.satellite', {
@@ -26,33 +26,7 @@ var southWest = L.latLng(33.064,
 ],
     5);*/
 
-var map = L.mapbox.map('map', {
-    maxBounds: bounds,
-    maxZoom: 16,
-    minZoom: 5
-}).setView([
-    40,
-    -81
-],
-    5);
-L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11').addTo(map);
 
-/*var map = L.map('map').setView([40, -81], 15);
-L.marker([40, -81])
-    .bindPopup("Hello <b>Leaflet GL</b>!<br>Whoa, it works!")
-    .addTo(map)
-    .openPopup();
-var gl = L.mapboxGL({
-    accessToken: token,
-    style: 'mapbox.satellite'
-}).addTo(map);*/
-
-/*L.mapbox.map('map')
-  .setView([40, -81], 14)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
-
-
-/*(does not work?)var map = L.mapbox.map('map')
   .setView([40,-81], 16)
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
