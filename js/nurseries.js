@@ -1,5 +1,5 @@
 
-token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
+/*token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
 
 var southWest = L.latLng(33.064,
     -99.053),
@@ -8,13 +8,14 @@ var southWest = L.latLng(33.064,
     bounds = L.latLngBounds(southWest, northEast);
 
 /*Mapbox GL Syntax*/
-var map = new mapboxgl.Map({
+/*var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/streets-v9', // style URL
   center: [-81, 40], // starting position as [lng, lat]
   zoom: 13
-});
+});*/
 
+/*-----Fresh Code-----*/
 
 
 var geoJson = ({
