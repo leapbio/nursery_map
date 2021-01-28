@@ -14,10 +14,10 @@ var southWest = L.latLng(33.064,
   center: [40, -81], // starting position as [lng, lat]
   zoom: 13
 });*/
-/*mapbox.satellite*/
+
 
 /*working*/
-var map = L.mapbox.map('map', 'https://a.tile.openstreetmap.org/${z}/${x}/${y}.png', {
+var map = L.mapbox.map('map', 'mapbox.satellite', {
     maxBounds: bounds,
     maxZoom: 16,
     minZoom: 5
