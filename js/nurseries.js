@@ -10,7 +10,7 @@ var southWest = L.latLng(33.064,
 /*Mapbox GL Syntax*/
 var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
-  style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
+  style: 'mapbox://styles/mapbox/streets-v9', // style URL
   center: [-81, 40], // starting position as [lng, lat]
   zoom: 13
 });
