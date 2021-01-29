@@ -7,15 +7,17 @@ var southWest = L.latLng(33.064,
         -69.697),
     bounds = L.latLngBounds(southWest, northEast);
 
-/*Mapbox GL Syntax*/
-/*var map = new mapboxgl.Map({
-  container: 'map', // HTML container ID
-  style: 'mapbox://styles/mapbox/streets-v9', // style URL
-  center: [-81, 40], // starting position as [lng, lat]
-  zoom: 13
-});*/
+
 
 /*-----Fresh Code-----*/
+
+/*Mapbox GL Syntax*/
+var map = new mapboxgl.Map({
+  container: 'map', // HTML container ID
+  style: 'mapbox://styles/mapbox/streets-v11', // style URL
+  center: [-81, 40], // starting position as [lng, lat]
+  zoom: 13
+});
 
 
 var geoJson = ({
