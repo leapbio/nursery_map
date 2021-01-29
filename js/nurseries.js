@@ -19,6 +19,18 @@ var map = new mapboxgl.Map({
   zoom: 13
 });
 
+map.on('load', function() {
+  map.addLayer({
+    id: 'terrain-data',
+    type: 'line',
+    source: {
+      type: 'vector',
+      url: 'mapbox://mapbox.mapbox-terrain-v2'
+    },
+    'source-layer': 'contour'
+  });
+});
+
 
 var geoJson = ({
     "type": "FeatureCollection",
