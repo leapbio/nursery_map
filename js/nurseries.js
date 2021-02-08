@@ -12,7 +12,7 @@ var southWest = L.latLng(33.064,
 /*-----Fresh Code-----*/
 
 /*Mapbox GL Syntax*/
-var map = new mapboxgl.Map({
+/*var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
   style: 'mapbox://styles/mapbox/streets-v11', // style URL
   center: [-81, 40], // starting position as [lng, lat]
@@ -29,7 +29,7 @@ map.on('load', function() {
     },
     'source-layer': 'contour'
   });
-});
+});*/
 
 
 var geoJson = ({
