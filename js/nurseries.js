@@ -1,35 +1,7 @@
 
-/*token = 'pk.eyJ1IjoiY21pbnZhc2l2ZXBsYW50cyIsImEiOiJmdGpSeF9jIn0.G_WIbBv2lsun6xHHXgIH8g';
-
-var southWest = L.latLng(33.064,
-    -99.053),
-    northEast = L.latLng(50.679,
-        -69.697),
-    bounds = L.latLngBounds(southWest, northEast);
 
 
 
-/*-----Fresh Code-----*/
-
-/*Mapbox GL Syntax*/
-/*var map = new mapboxgl.Map({
-  container: 'map', // HTML container ID
-  style: 'mapbox://styles/mapbox/streets-v11', // style URL
-  center: [-81, 40], // starting position as [lng, lat]
-  zoom: 13
-});
-
-map.on('load', function() {
-  map.addLayer({
-    id: 'terrain-data',
-    type: 'line',
-    source: {
-      type: 'vector',
-      url: 'mapbox://mapbox.mapbox-terrain-v2'
-    },
-    'source-layer': 'contour'
-  });
-});*/
 
 
 var geoJson = ({
