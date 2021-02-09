@@ -1605,15 +1605,15 @@ var geoJson = ({
 })
 
 // add markers to map
-geojson.features.forEach(function(marker) {
+geojson.features.forEach(function(markers) {
 
   // create a HTML element for each feature
   var el = document.createElement('div');
-  el.className = 'marker';
+  el.className = 'markers';
 
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
+    .setLngLat(markers.geometry.coordinates)
     .addTo(map);
 });
 
