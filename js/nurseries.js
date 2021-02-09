@@ -1605,15 +1605,15 @@ var geoJson = ({
 })
 
 // add markers to map
-geojson.features.forEach(function(markers) {
+geojson.features.forEach(function(marker) {
 
   // create a HTML element for each feature
   var el = document.createElement('div');
-  el.className = 'markers';
+  el.className = 'marker';
 
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
-    .setLngLat(markers.geometry.coordinates)
+    .setLngLat(marker.geometry.coordinates)
     .addTo(map);
 });
 
@@ -1623,7 +1623,7 @@ geojson.features.forEach(function(markers) {
 // Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
 // above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
 // you will need to do this within a `featureLayer.on('ready'` event.
-markers.eachLayer(function (layer) {
+marker.eachLayer(function (layer) {
     // here you call `bindPopup` with a string of HTML you create - the feature
     // properties declared above are available under `layer.feature.properties`
     var content = '<div>' + '<h2>' + layer.feature.properties.Nursery + '</h2>' +
@@ -1644,7 +1644,7 @@ $('.menu-ui a').on('click', function () {
     // For each filter link, get the 'data-filter' attribute value.
     var filter = $(this).data('filter');
     $(this).addClass('active').siblings().removeClass('active');
-    markers.setFilter(function (f) {
+    marker.setFilter(function (f) {
         // If the data-filter attribute is set to "all", return
         // all (true). Otherwise, filter on markers that have
         // a value set to true based on the filter name.
