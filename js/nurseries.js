@@ -1623,7 +1623,7 @@ geojson.features.forEach(function(marker) {
 // Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
 // above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
 // you will need to do this within a `featureLayer.on('ready'` event.
-marker.eachLayer(function (layer) {
+markers.eachLayer(function (layer) {
     // here you call `bindPopup` with a string of HTML you create - the feature
     // properties declared above are available under `layer.feature.properties`
     var content = '<div>' + '<h2>' + layer.feature.properties.Nursery + '</h2>' +
@@ -1644,7 +1644,7 @@ $('.menu-ui a').on('click', function () {
     // For each filter link, get the 'data-filter' attribute value.
     var filter = $(this).data('filter');
     $(this).addClass('active').siblings().removeClass('active');
-    marker.setFilter(function (f) {
+    markers.setFilter(function (f) {
         // If the data-filter attribute is set to "all", return
         // all (true). Otherwise, filter on markers that have
         // a value set to true based on the filter name.
