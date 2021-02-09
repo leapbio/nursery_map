@@ -8,8 +8,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2xldmVsYW5kLW1ldHJvcGFya3MiLCJhIjoiY2trb2k1M
     });
 
 
-
-
 var geoJson = ({
     "type": "FeatureCollection",
     "features": [{
@@ -1606,11 +1604,19 @@ var geoJson = ({
     ]
 })
 
+// add markers to map
+geojson.features.forEach(function(marker) {
 
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
 
-var markers = L.mapbox.featureLayer()
-    .setGeoJSON(geoJson)
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
     .addTo(map);
+});
+
 
 
 
