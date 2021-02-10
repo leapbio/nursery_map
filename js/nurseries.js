@@ -1605,7 +1605,19 @@ var geoJson = ({
 })
 
 
+	
+	// add markers to map
+geoJson.features.forEach(function(marker) {
 
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
 
 
 // Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
