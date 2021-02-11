@@ -48,7 +48,15 @@ geoJson.features.forEach(function(marker) {
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+    .setHTML('<div>' + '<h2>' + layer.feature.properties.Nursery + '</h2>' +
+        '<p class="popup-p">' + '<span>Address: </span>' + layer.feature.properties.Address + '</p>' +
+        '<p class="popup-p">' + (layer.feature.properties.Contact_Number !== 'mull' ? '<span>Phone: </span>' + layer.feature.properties.Contact_Number : "") + '</p>' +
+
+        '<p class="popup-p">' + (layer.feature.properties.Facebook !== 'mull' ? '<span>Website: </span>' + '<a href="' + 'http://' + layer.feature.properties.Facebook + '" target="_blank">' + layer.feature.properties.Facebook : "") + '</a>' + '</p>' +
+
+        '<p class="popup-p">' + (layer.feature.properties.Keep !== 'mull' ? '<span>Plants: </span>' + layer.feature.properties.Keep : "") + '</p>' +
+        '<p class="popup-p">' + (layer.feature.properties.Type !== 'mull' ? '<span>Other: </span>' + layer.feature.properties.Type : "") +
+        '</p>' + '</div>'))
     .addTo(map);
 });
 	
