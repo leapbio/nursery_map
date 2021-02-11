@@ -56,7 +56,7 @@ geoJson.features.forEach(function(marker) {
 
         '<p class="popup-p">' + (layer.feature.properties.Keep !== 'mull' ? '<span>Plants: </span>' + layer.feature.properties.Keep : "") + '</p>' +
         '<p class="popup-p">' + (layer.feature.properties.Type !== 'mull' ? '<span>Other: </span>' + layer.feature.properties.Type : "") +
-        '</p>' + '</div>'))
+        '</p>' + '</div>')
     .addTo(map);
 });
 	
