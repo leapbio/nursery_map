@@ -1620,6 +1620,8 @@ geoJson.features.forEach(function(marker) {
 });
 
 
+
+/*
 // Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
 // above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
 // you will need to do this within a `featureLayer.on('ready'` event.
@@ -7884,5 +7886,4 @@ var polyline_options = {
 // endpoints and fill the path.
 // http://leafletjs.com/reference.html#polygon
 var polyline = L.polyline((L.GeoJSON.coordsToLatLngs(line_points, reverse = false)), polyline_options).addTo(map);
-
 
