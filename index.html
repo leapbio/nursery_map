@@ -48,7 +48,7 @@ geoJson.features.forEach(function(marker) {
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    .setHTML('<h3>' + marker.properties.State_1 + '</h3><p>' + marker.properties.Address + '</p>'))
+    .setHTML('<h3>' + marker.properties.Nursery + '</h3><p>' + marker.properties.Address + marker.properties.Contact_Number + marker.properties.Facebook + marker.properties.Keep + marker.properties.Type + '</p>'))
     .addTo(map);
 });
 	
