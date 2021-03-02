@@ -1505,6 +1505,72 @@ var geoJson = ({
             ]
         }
     },
+		 
+	{
+        "type": "Feature",
+        "properties": {
+            "Nursery": "Plant It Native, LLC",
+            "Contact_Email": "josh @plantitnativeohio.com",
+            "Contact_Number": "440-226-0480",
+            "State": "OH",
+            "Address": "2 Public Square, Willoughby, Ohio  44094",
+            "Street": "2 Public Square",
+            "City": "Willoughby Hills",
+            "State_1": "IN",
+            "Zip": 46788,
+            "Keep": "Nursery not open to the public.Plants can be purchased in person at the Willoughby Farmers Market or online with pickup at the market from May to October,Plants, Herbaceous, Woody, Shrubs",
+            "Type": "Grown from known seed locations (can track provenance), Germinated from seed",
+            "Latitude": 41.64002413018519,
+            "Longitude": -81.40513334453202,
+            "Owner_Con": "Josh Myers",
+            "Sales_Con": "Josh Myers",
+            "General E": "josh@plantitnativeohio.com",
+            "Facebook": "www.plantitnativeohio.com",
+            "marker-color": "#254503",
+            "marker-size": "small",
+            "marker-symbol": "garden"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [41.64002413018519, -81.40513334453202
+                -81.40513334453202,
+                41.64002413018519
+            ]
+        }
+    },	 
+   {
+    'type': 'Feature',
+    'properties': {
+        'Timestamp': '1/26/2021 8: 55: 06',
+        'Are you changing a listing or adding a new one?': 'New Nursery',
+        'Nursery Name': 'Hilltop Hollow Farm',
+        'In what state is your nursery located? (Use Two-Letter Designation)': 'PA',
+        'Type of Nursery': 'Wholesale, Retail, Online, Open to the Public',
+        'What percent of your inventory is Native?': 70,
+        'Do you have Ohio Native Species?': 'Yes',
+        'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees',
+        'Are your plants...': 'Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+        'Does your nursery specialize in...': 'Organic, Wetland Restoration, Native Plants',
+        'Address (street, city)': '545 Thomas Hill Rd.',
+        'Zip Code': 16823,
+        'Your name': 'Steve Dahm',
+        'Phone number': '814-424-3240',
+        'E-mail': 'hilltophollowfarm@gmail.com',
+        'Preferred contact method': 'Email',
+        'Notes': 'We sell bare root plants through the mail from Nov-May, and potted plants at the farm from April-Sept.',
+        'Questions and comments': nan,
+        'Website': 'https: //hilltophollowfarm.com/',
+        'location': Location(545, Thomas Hill Road, Gum Stump, Bellefonte, Centre County, Pennsylvania, 16823, United States, (40.97983785, -77.82586218573906, 0.0)),
+        'point': (40.97983785, -77.82586218573906, 0.0),
+        'latitude': 40.97983785,
+        'longitude': -77.82586218573906,
+        'elevation': 0.0
+    },
+    'geometry': {
+        'type': 'Point',
+        'coordinates': [-77.82586218573906, 40.97983785]
+    }
+},	 
     {
         "type": "Feature",
         "properties": {
