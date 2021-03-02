@@ -1518,7 +1518,7 @@ var geoJson = ({
             "City": "Willoughby Hills",
             "State_1": "IN",
             "Zip": 46788,
-            "Keep": "Nursery not open to the public. Plants can be purchased in person at the Willoughby Farmers Market or online with pickup at the market from May to October,Plants, Herbaceous, Woody, Shrubs",
+            "Keep": "Nursery not open to the public. Plants can be purchased in person at the Willoughby Farmers Market or online with pickup at the market from May to October. Types: Plants, Herbaceous, Woody, Shrubs",
             "Type": "Grown from known seed locations (can track provenance), Germinated from seed",
             "Latitude": 41.64002413018519,
             "Longitude": -81.40513334453202,
@@ -1554,7 +1554,7 @@ var geoJson = ({
             "Owner_Con": "Steve Dahm",
             "Sales_Con": "Steve Dahm",
             "General E": "hilltophollowfarm@gmail.com",
-            "Facebook": "https://hilltophollowfarm.com/",
+            "Facebook": "https://hilltophollowfarm.com",
             "marker-color": "#254503",
             "marker-size": "small",
             "marker-symbol": "garden"
