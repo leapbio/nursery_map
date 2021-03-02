@@ -1554,7 +1554,7 @@ var geoJson = ({
             "Owner_Con": "Steve Dahm",
             "Sales_Con": "Steve Dahm",
             "General E": "hilltophollowfarm@gmail.com",
-            "Facebook": "https://hilltophollowfarm.com",
+            "Facebook": "www.hilltophollowfarm.com",
             "marker-color": "#254503",
             "marker-size": "small",
             "marker-symbol": "garden"
