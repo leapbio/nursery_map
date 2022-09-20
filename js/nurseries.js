@@ -57,1601 +57,1063 @@ var gl = L.mapboxGL({
   .setView([40,-81], 16)
   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));*/
 
-var geoJson = ({
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Cardno Native Plant Nursery",
-            "Contact_Email": "mull",
-            "Contact_Number": "574.586.2412",
-            "State": "IN",
-            "Address": "128 Sunset Dr Walkerton, IN 46574",
-            "Street": "128 Sunset Dr",
-            "City": "Walkerton",
-            "State_1": "IN",
-            "Zip": 46574,
-            "Keep": "Seeds, bare root, plugs, and gallons. Trees, vines, ferns, forbs, and grasses. Wetland and prarie seed mixes",
-            "Type": "Wholesale only.  Walk-ins by appointment or schedule a tour.",
-            "Latitude": 41.458327,
-            "Longitude": -86.494062,
-            "Owner_Con": "mull",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.cardnonativeplantnursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -86.494062,
-                41.458327
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Naturally Native",
-            "Contact_Email": "nnn@naturallynative.net",
-            "Contact_Number": "(419) 833-2020",
-            "State": "OH",
-            "Address": "20525 Johnson Rd, South Bend, IN 46614",
-            "Street": "20525 Johnson Rd",
-            "City": "South Bend",
-            "State_1": "IN",
-            "Zip": 46614,
-            "Keep": "forbs, ferns, grass/sedges, trees, shrubs",
-            "Type": "Order via email or call (419) 833-2020 or visit!",
-            "Latitude": 41.6166118,
-            "Longitude": -86.2538159,
-            "Owner_Con": "Jan Hunter",
-            "Sales_Con": "Jan Hunter",
-            "General E": "nnn@naturallynative.net",
-            "Facebook": "www.naturallynative.net",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -86.2538159,
-                41.6166118
-            ]
-        }
-    },
-                 
-    {
-		'type': 'Feature',
-		'properties': {
-			'Timestamp': '1/23/2020 20:06:48',
-			'Nursery_Status': 'New Nursery',
-			'Nursery': 'Erie Shore Gardens',
-			'State_1': 'OH',
-			'Type': 'Retail, Online, Small/Home Business',
-			'Native _%': 99,
-			'Native': 'Yes',
-			'Keep': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
-			'Grow_Type': 'Germinated from seed, Grown by clonal dividing',
-			'Specialty': 'Organic, Native Plants',
-			'Address': '10246 Widgeon Drive',
-			'Owner_Con': 44023,
-			'Contact_Number': 'Amy Coursen and Chris Chaney',
-			'Contact_Email': '440-552-5385',
-			'Preferred_Contact': 'erieshoregardens@gmail.com',
-			'Notes': 'Phone, Email',
-			'Questions and comments': "",
-			'Zip': "",
-			'Facebook': "https://www.erieshoregardens.com",
-			'point': (41.37886457781648, -81.28085336106552, 0.0),
-			'Latitude': 41.37886457781648,
-			'Longitude': -81.28085336106552,
-			'elevation': 0.0,
-			"marker-color": "#254503",
-            		"marker-size": "small",
-            		"marker-symbol": "garden"
-		},
-		'geometry': {
-			'type': 'Point',
-			'coordinates': [-81.28085336106552, 41.37886457781648]
-		}
-	},             
-      {
-    'type': 'Feature',
-    'properties': {
-        'Timestamp': '4/3/2020 9:35:14',
-        'Nursery_Status': 'Existing Nursery',
-        'Nursery': 'Riverside Native Trees',
-        'State_1': 'OH',
-        'Type': 'Retail, Online, Appointment Only',
-        'Native _%': 90,
-        'Native': 'Yes',
-        'Keep': 'Woody, Shrubs, Containerized Trees',
-        'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-        'Specialty': 'Organic, Wetland Restoration, Native Plants' , 
-        'Address' : '2295 River Road Delaware, OH',
-        'Owner_Con' : 'Ed Kapraly',
-        'Contact_Number': '740 - 815 - 3230',
-        'Contact_Email': 'ekapraly @gmail.com',
-        'Preferred_Contact': 'Email',
-        'Notes': "",
-        'Phone': '740 - 815 - 3230',
-        'Email':'ekapraly @gmail.com',
-        'Questions and comments': " ", 
-        'Zip' : 43015, 
-        'Facebook' : 'https//www.riversidenativetrees.com',
-        'point' : (40.356131799287574, -83.1801664369442, 0.0),
-        'Latitude' : 40.356131799287574,
-        'Longitude' : -83.1801664369442,
-        'elevation' : 0.0,
-        "marker-color": "#254503",
-        "marker-size": "small",
-        "marker-symbol": "garden"
-    },
-        'geometry': {
-        'type': 'Point',
-        'coordinates': [-83.1801664369442, 40.356131799287574]         
-    }
-},           
-                 
-     {
+var geoJson = ({'type': 'FeatureCollection', 'features': [{
         'type': 'Feature',
         'properties': {
-            'Timestamp': '4/1/2020 12:18',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Natives in Harmony',
-            'State_1': 'OH',
-            'Type': 'Wholesale, Retail, Open to the Public, Appointment Only',
-            'Native _%': 100,
-            'Native': 'Yes',
-            'Keep': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
-            'Specialty': 'Wetland Restoration, Native Plants',
-            'Address': '4652 Township Road 179 Marengo',
-            'Owner_Con': "Gale Martin",
-            'Contact_Number': '419-688-9800',
-            'Contact_Email': 'gale@nativesinharmony.com',
-            'Preferred_Contact': 'Phone, Email',
-            'Notes': 'forbs (specializing in state listed species and less common natives), Do not provide mail order plants. Plant list available on website for reference.',
-            'Questions and comments': '',
-            'Zip': 43334,
-            'Facebook': 'https://www.nativesinharmony.com/default.html',
-            'point': (40.441237, -82.792684, 0.0),
-            'Latitude': 40.441237,
-            'Longitude': -82.792684,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [-82.792684, 40.441237]
-        }
-    },
-                 
-    {
-        'type': 'Feature',
-        'properties': {
-            'Timestamp': '1/23/2020 9: 53: 47',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Agrecol Native Nursery',
-            'State_1': 'WI',
-            'Type': 'Wholesale, Retail, Online, Open to the Public, Catalog',
-            'Native _%': '99',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
-            'Specialty': 'Organic, Wetland Restoration, Native Plants, Bioengineering Material',
-            'Address': '10101 N Casey Rd, Evansville',
-            'Owner_Con': 'Nursery Sales',
-            'Contact_Number': '(608) 223-3571',
-            'Contact_Email': 'ecosolutions@agrecol.com',
-            'Preferred_Contact': 'Phone, Email',
+            'Timestamp': '1/23/2020 9:53:47',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Agrecol Native Nursery',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'WI',
+            'Type of Nursery': 'Wholesale, Retail, Online, Open to the Public, Catalog',
+            'What percent of your inventory is Native?': 99,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Organic, Wetland Restoration, Native Plants, Bioengineering Material',
+            'Address (Format: street, city)': '10101 N Casey Rd, Evansville',
+            'Zip Code': 53536,
+            'Your name': 'Nursery Sales',
+            'Phone number': '(608) 223-3571',
+            'E-mail': 'ecosolutions@agrecol.com',
+            'Preferred contact method': 'Phone, Email',
             'Notes': 'Free Shipping for Online Plant Orders! We ship May through September. Visit our website for details.',
-            'Questions and comments': "null",
-            'Zip': 53536.0,
-            'Facebook': "www.agrecol.com",
-            'Test': "null",
-            'point': (42.818010, -89.192188, 0.0),
-            'Latitude': 42.818010,
-            'Longitude': -89.192188,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [-89.192188, 42.818010]
+            'coordinates': [nan, nan]
         }
-    }, 
-
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/23/2020 13: 38: 43',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Wildtype Native Plants & Ecological Services',
-            'State_1': 'MI',
-            'Type': 'Wholesale, Open to the Public, Catalog',
-            'Native _%': '99',
-            'Native': 'Yes',
-            'Keep': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Wetland Restoration, Native Plants, Bioengineering Material',
-            'Address': '900 N. Every Road Mason ',
-            'Owner_Con': 'Bill Schneider',
-            'Contact_Number': '517.244.1140',
-            'Contact_Email': 'info@wildtypeplants.com',
-            'Preferred_Contact': 'Phone, Email',
+            'Timestamp': '1/23/2020 10:55:25',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Dropseed Native Plant Nursery',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'KY',
+            'Type of Nursery': 'Wholesale, Retail, Online, Open to the Public, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '1205 S. Buckeye Lane, Goshen',
+            'Zip Code': 40026,
+            'Your name': 'Margaret Shea',
+            'Phone number': '5024399033',
+            'E-mail': 'margaret@dropseednursery.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'Thanks for doing this!',
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (38.400204605012995, -85.5489178299659, 0.0),
+            'latitude': 38.400204605012995,
+            'longitude': -85.5489178299659,
+            'elevation': 0.0
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-85.5489178299659, 38.400204605012995]
+        }
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/23/2020 13:38:43',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Wildtype Native Plants & Ecological Services',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'MI',
+            'Type of Nursery': 'Wholesale, Open to the Public, Catalog',
+            'What percent of your inventory is Native?': 99,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants, Bioengineering Material',
+            'Address (Format: street, city)': '900 N. Every Road, Mason',
+            'Zip Code': 48854,
+            'Your name': 'Bill Schneider',
+            'Phone number': '517.244.1140',
+            'E-mail': 'info@wildtypeplants.com',
+            'Preferred contact method': 'Phone, Email',
             'Notes': 'we are primarily a wholesale nursery but we are open to the public 12 days a season - see our website for more detail wildtypeplants.com',
             'Questions and comments': 'Thanks!!!!',
-            'Zip': 48854.0,
-            'Facebook': "www.wildtypeplants.com",
-            'Test': "null",
-            'point': (42.608449, -84.382836, 0.0),
-            'Latitude': 42.608449,
-            'Longitude': -84.382836,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [-84.382836, 42.608449]
+            'coordinates': [nan, nan]
         }
-    },
-{
-    'type': 'Feature',
-    'properties': {
-        'Timestamp': '3/24/2020 11:41:46',
-        'Nursery_Status': 'Existing Nursery',
-        'Nursery': "Powell's Native Wildflowers  ",
-        'State_1': 'OH',
-        'Type': 'Online, Appointment Only, Small/Home Business',
-        'Native _%': 100,
-        'Native': 'Yes',
-        'Keep': 'Seed, Plants, Herbaceous, Woody',
-        'Grow_Type': 'Germinated from seed, Grown by clonal dividing',
-        'Specialty': 'Native Plants',
-        'Address': '7310 Glorine St NW',
-        'Owner_Con': "Tim Powell",
-        'Contact_Number': '2342145763',
-        'Contact_Email': 'powellsnativewildflowers@gmail.com',
-        'Preferred_Contact': 'Email',
-        'Notes': '',
-        'Questions and comments': "",
-        'Zip': 44720,
-        'Facebook': 'www.powellsnativewildflowers.com',
-        'point': (40.88135444444444, -81.484725, 0.0),
-        'Latitude': 40.88135444444444,
-        'Longitude': -81.484725,
-        'elevation': 0.0,
-        "marker-color": "#254503",
-        "marker-size": "small",
-        "marker-symbol": "garden"
-    },
-    'geometry': {
-        'type': 'Point',
-        'coordinates': [-81.484725, 40.88135444444444]
-    }
-},
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/23/2020 15: 18: 34',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Alpha Nurseries Inc.',
-            'State_1': 'MI',
-            'Type': 'Wholesale',
-            'Native _%': '85',
-            'Native': 'Yes',
-            'Keep': 'Plants, Woody, Shrubs, Bare Root',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
-            'Specialty': 'Wetland Restoration, Native Plants',
-            'Address': '3737 65th St, Holland',
-            'Owner_Con': 'Jeff Busscher',
-            'Contact_Number': '269-857-7804',
-            'Contact_Email': 'info@alphanurseries.com',
-            'Preferred_Contact': 'Email',
+            'Timestamp': '1/23/2020 14:09:09',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Country Road Greenhouses',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'IL',
+            'Type of Nursery': 'Wholesale',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Organic, Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '19561 Twombly Road, Rochelle',
+            'Zip Code': 61068,
+            'Your name': 'Bryan and Peggy Redington',
+            'Phone number': '9153843311',
+            'E-mail': 'crginc@prairieplugs.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
+        }
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/23/2020 15:18:34',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Alpha Nurseries Inc.',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'MI',
+            'Type of Nursery': 'Wholesale',
+            'What percent of your inventory is Native?': 85,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Woody, Shrubs, Bare Root',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '3737 65th St, Holland',
+            'Zip Code': 49423,
+            'Your name': 'Jeff Busscher',
+            'Phone number': '269-857-7804',
+            'E-mail': 'info@alphanurseries.com',
+            'Preferred contact method': 'Email',
             'Notes': 'We are a bare root tree nursery featuring 250 species of mostly native plants',
             'Questions and comments': 'Thank-you for allowing us to join your site!',
-            'Zip': 49423.0,
-            'Facebook': "www.alphanurseries.com",
-            'Test': "null",
-            'point': (42.691312, -86.182050, 0.0),
-            'Latitude': 42.691312,
-            'Longitude': -86.182050,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [-86.182050, 42.691312]
+            'coordinates': [nan, nan]
         }
-    },
-
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/26/2020 9: 22: 13',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Native Ohio Plants, LLC',
-            'State_1': 'OH',
-            'Type': 'Retail, Appointment Only, Small/Home Business',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Plants, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Native Plants',
-            'Address': '2680 West Charleston Rd, Tipp City, OH',
-            'Owner_Con': 'Ron Corbett',
-            'Contact_Number': '(937) 524-4058',
-            'Contact_Email': 'nativeohio@earthlink.net',
-            'Preferred_Contact': 'Email',
-            'Notes': 'Visits to the nursery can be made by appointment or at sales shown on the nursery website (nativeohioplants.com).  The nursery specializes in container grown trees, shrubs, and wildflowers native to Ohio that have been propagated from locally gathered seed.',
-            'Questions and comments': "null",
-            'Zip': 45371.0,
-            'Facebook': "www.nativeohioplants.com",
-            'Test': "null",
-            'point': (39.925213, -84.149294, 0.0),
-            'Latitude': 39.925213,
-            'Longitude': -84.149294,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [-84.149294, 39.925213]
-        }
-    },
-    {
-        'type': 'Feature',
-        'properties': {
-            'Timestamp': '1/23/2020 10: 55: 25',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Dropseed Native Plant Nursery',
-            'State_1': 'KY',
-            'Type': 'Wholesale, Retail, Online, Open to the Public, Small/Home Business',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
-            'Specialty': 'Organic, Native Plants',
-            'Address': '1205 S. Buckeye Lane',
-            'Owner_Con': 'Margaret Shea',
-            'Contact_Number': '5024399033',
-            'Contact_Email': 'margaret@dropseednursery.com',
-            'Preferred_Contact': 'Email',
-            'Notes': 'Thanks for doing this!',
-            'Questions and comments': "null",
-            'Zip': 40026.0,
-            'Facebook': "www.dropseednursery.com",
-            'Test': "null",
-            'point': (38.400204605012995,
-                -85.5489178299659,
-                0.0),
-            'Latitude': 38.400204605012995,
-            'Longitude': -85.5489178299659,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [
-                -85.5489178299659,
-                38.400204605012995
-            ]
-        }
-    },
-    
-    {
-        'type': 'Feature',
-        'properties': {
-            'Timestamp': '1/23/2020 14: 09: 09',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Country Road Greenhouses',
-            'State_1': 'IL',
-            'Type': 'Wholesale',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Plants',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Organic, Wetland Restoration, Native Plants',
-            'Address': '19561 Twombly Road',
-            'Owner_Con': 'Bryan and Peggy Redington',
-            'Contact_Number': '9153843311',
-            'Contact_Email': 'crginc@prairieplugs.com',
-            'Preferred_Contact': 'Email',
-            'Notes': "null",
-            'Questions and comments': "null",
-            'Zip': 61068.0,
-            'Facebook': "www.rngr.net/resources/directory/countryroadgreenhousesinc/view",
-            'Test': "null",
-            'point': (40.7749706,
-                -74.4274712,
-                0.0),
-            'Latitude': 40.7749706,
-            'Longitude': -74.4274712,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [
-                -74.4274712,
-                40.7749706
-            ]
-        }
-    },
-    
-    {
-        'type': 'Feature',
-        'properties': {
-            'Timestamp': '1/23/2020 17: 08: 32',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'GoNativesNow',
-            'State_1': 'OH',
-            'Type': 'Retail, Open to the Public, Appointment Only',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Organic, Native Plants',
-            'Address': '107 E. Concord Dr.',
-            'Owner_Con': 'Sue Saari',
-            'Contact_Number': '5135057191',
-            'Contact_Email': 'suesaari@mac.com',
-            'Preferred_Contact': 'Email',
+            'Timestamp': '1/23/2020 17:08:32',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'GoNativesNow',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Open to the Public, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '107 E. Concord Dr., Lebanon',
+            'Zip Code': 45036,
+            'Your name': 'Sue Saari',
+            'Phone number': '5135057191',
+            'E-mail': 'suesaari@mac.com',
+            'Preferred contact method': 'Email',
             'Notes': '2 Open Houses yearly; look for us at the Midwest Native Plant Conference',
-            'Questions and comments': "null",
-            'Zip': 45036.0,
-            'Facebook': "www.gonativesnow.com",
-            'Test': "null",
-            'point': (41.63580618655718,
-                -72.72413350523125,
-                0.0),
-            'Latitude': 41.63580618655718,
-            'Longitude': -72.72413350523125,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (39.423803748270664, -84.20976805383016, 0.0),
+            'latitude': 39.423803748270664,
+            'longitude': -84.20976805383016,
+            'elevation': 0.0
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -72.72413350523125,
-                41.63580618655718
-            ]
+            'coordinates': [-84.20976805383016, 39.423803748270664]
         }
-    },
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/23/2020 18: 47: 54',
-            'Nursery_Status': 'Existing Nursery',
-            'Nursery': 'Natural Communities, LLC.',
-            'State_1': 'IL',
-            'Type': 'Wholesale, Retail, Online, Appointment Only',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Wetland Restoration, Native Plants',
-            'Address': '19 Circle Dr.',
-            'Owner_Con': 'Nicholas Fuller',
-            'Contact_Number': '2247621501',
-            'Contact_Email': 'natives@naturalcommunities.net',
-            'Preferred_Contact': 'Email',
+            'Timestamp': '1/23/2020 18:47:54',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Natural Communities, LLC.',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'IL',
+            'Type of Nursery': 'Wholesale, Retail, Online, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '19 Circle Dr., Algonquin',
+            'Zip Code': 60102,
+            'Your name': 'Nicholas Fuller',
+            'Phone number': '2247621501',
+            'E-mail': 'natives@naturalcommunities.net',
+            'Preferred contact method': 'Email',
             'Notes': 'NATURAL COMMUNITIES BRING NATURE TO LIFE',
-            'Questions and comments': "null",
-            'Zip': 60102.0,
-            'Facebook': "www.naturalcommunities.net",
-            'Test': "null",
-            'point': (41.245809,
-                -95.83274663636364,
-                0.0),
-            'Latitude': 41.245809,
-            'Longitude': -95.83274663636364,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (42.1593718, -88.3000511, 0.0),
+            'latitude': 42.1593718,
+            'longitude': -88.3000511,
+            'elevation': 0.0
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -95.83274663636364,
-                41.245809
-            ]
+            'coordinates': [-88.3000511, 42.1593718]
         }
-    },
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/23/2020 18: 50: 29',
-            'Nursery_Status': 'Existing Nursery',
-            'Nursery': 'Natural Communities, LLC.',
-            'State_1': 'IL',
-            'Type': 'Wholesale, Retail, Online, Appointment Only',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed',
-            'Specialty': 'Wetland Restoration, Native Plants',
-            'Address': '3333 Warrenville Rd #200, Lisle, IL ',
-            'Owner_Con': 'Nicholas Fuller',
-            'Contact_Number': '3312481016',
-            'Contact_Email': 'natives@naturalcommunities.net',
-            'Preferred_Contact': 'Email',
+            'Timestamp': '1/23/2020 18:50:29',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Natural Communities, LLC.',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'IL',
+            'Type of Nursery': 'Wholesale, Retail, Online, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '3333 Warrenville Rd #200, Lisle, IL',
+            'Zip Code': 60532,
+            'Your name': 'Nicholas Fuller',
+            'Phone number': '3312481016',
+            'E-mail': 'natives@naturalcommunities.net',
+            'Preferred contact method': 'Email',
             'Notes': 'NATURAL COMMUNITIES BRING NATURE TO LIFE',
-            'Questions and comments': "null",
-            'Zip': 60532.0,
-            'Facebook': "www.naturalcommunities.net",
-            'Test': "null",
-            'point': (41.8081836,
-                -88.0903357,
-                0.0),
-            'Latitude': 41.8081836,
-            'Longitude': -88.0903357,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (41.8087956717388, -88.11610562933943, 0.0),
+            'latitude': 41.8087956717388,
+            'longitude': -88.11610562933943,
+            'elevation': 0.0
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -88.0903357,
-                41.8081836
-            ]
+            'coordinates': [-88.11610562933943, 41.8087956717388]
         }
-    },
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/24/2020 13: 26: 57',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': "Mary's Plant Farm & Landscaping",
-            'State_1': 'OH',
-            'Type': 'Retail, Open to the Public, Catalog',
-            'Native _%': '60',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
-            'Grow_Type': 'Germinated from seed, Grown by clonal dividing',
-            'Specialty': 'Native Plants',
-            'Address': '2410 Lanes Mill Rd',
-            'Owner_Con': 'Sherri Berger, manager',
-            'Contact_Number': '5138940022',
-            'Contact_Email': 'marysplantfarm@zoomtown.com',
-            'Preferred_Contact': 'Email',
-            'Notes': "We are a family owned and operated nursery in our 44th season, growing our plants for hardiness in Ohio soil in our fields, not in a soilless mix in a greenhouse.  During business hours our customers are encouraged to walk Mary's private gardens that are 75 years old, showing mature plants and the locations where they prefer to grow .",
+            'Timestamp': '1/23/2020 18:51:36',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Natural Communities, LLC.',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'IL',
+            'Type of Nursery': 'Wholesale, Retail, Online, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '19 Circle Dr., Algonquin',
+            'Zip Code': 60102,
+            'Your name': 'Nicholas Fuller',
+            'Phone number': '3312481016',
+            'E-mail': 'natives@naturalcommunities.net',
+            'Preferred contact method': 'Email',
+            'Notes': 'NATURAL COMMUNITIES BRING NATURE TO LIFE',
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (42.1593718, -88.3000511, 0.0),
+            'latitude': 42.1593718,
+            'longitude': -88.3000511,
+            'elevation': 0.0
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-88.3000511, 42.1593718]
+        }
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/23/2020 20:06:48',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Erie Shore Gardens',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Online, Small/Home Business',
+            'What percent of your inventory is Native?': 99,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '10246 Widgeon Drive, Chagrin Falls',
+            'Zip Code': 44023,
+            'Your name': 'Amy Coursen and Chris Chaney',
+            'Phone number': '440-552-5385',
+            'E-mail': 'erieshoregardens@gmail.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
+        }
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/24/2020 13:26:57',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Marys Plant Farm & Landscaping',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Open to the Public, Catalog',
+            'What percent of your inventory is Native?': 60,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2410 Lanes Mill Rd, Hamilton',
+            'Zip Code': 45013,
+            'Your name': 'Sherri Berger, manager',
+            'Phone number': '5138940022',
+            'E-mail': 'marysplantfarm@zoomtown.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'We are a family owned and operated nursery in our 44th season, growing our plants for hardiness in Ohio soil in our fields, not in a soilless mix in a greenhouse. During business hours our customers are encouraged to walk Marys private gardens that are 75 years old, showing mature plants and the locations where they prefer to grow .',
             'Questions and comments': 'Our complete catalog is found at www.marysplantfarm.com',
-            'Zip': 45013.0,
-            'Facebook': "www.marysplantfarm.com",
-            'Test': "null",
-            'point': (39.45098978091304,
-                -84.68346205196627,
-                0.0),
-            'Latitude': 39.45098978091304,
-            'Longitude': -84.68346205196627,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -84.68346205196627,
-                39.45098978091304
-            ]
+            'coordinates': [nan, nan]
         }
-    },
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/25/2020 12: 34: 24',
-            'Nursery_Status': 'Existing Nursery',
-            'Nursery': 'Stone Silo Prairie Gardens ',
-            'State_1': 'Wi',
-            'Type': 'Wholesale, Retail, Open to the Public, Small/Home Business',
-            'Native _%': '100',
-            'Native': 'No',
-            'Keep': 'Plants, Herbaceous, Ferns',
-            'Grow_Type': 'Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
-            'Specialty': 'Native Plants',
-            'Address': '2325 oak ridge circle ',
-            'Owner_Con': 'Justin Kroening ',
-            'Contact_Number': '9207132879',
-            'Contact_Email': 'kroeningjustin@gmail.com',
-            'Preferred_Contact': 'Phone',
-            'Notes': "null",
-            'Questions and comments': "null",
-            'Zip': 54115.0,
-            'Facebook': "www.stonesiloprairie.com",
-            'Test': "null",
-            'point': (44.425452,
-                -88.020575,
-                0.0),
-            'Latitude': 44.425452,
-            'Longitude': -88.020575,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Timestamp': '1/25/2020 12:34:24',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Stone Silo Prairie Gardens',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'Wi',
+            'Type of Nursery': 'Wholesale, Retail, Open to the Public, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'No',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2325 oak ridge circle, De Pere',
+            'Zip Code': 54115,
+            'Your name': 'Justin Kroening',
+            'Phone number': '9207132879',
+            'E-mail': 'kroeningjustin@gmail.com',
+            'Preferred contact method': 'Phone',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -88.020575,
-                44.425452
-            ]
+            'coordinates': [nan, nan]
         }
-    },
- 
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/28/2020 9: 47: 56',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'Star Farms Native Plants',
-            'State_1': 'OH',
-            'Type': 'Retail, Open to the Public, Appointment Only, Small/Home Business',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Plants, Herbaceous, Woody, Shrubs, Containerized Trees',
-            'Grow_Type': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown from starter plugs',
-            'Specialty': 'Native Plants',
-            'Address': '14789 State Route 292, Kenton',
-            'Owner_Con': 'Dave McPheron',
-            'Contact_Number': '937-935-3970',
-            'Contact_Email': 'starfarmsnatives@gmail.com',
-            'Preferred_Contact': 'Phone, Email',
+            'Timestamp': '1/26/2020 9:22:13',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Native Ohio Plants, LLC',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2680 West Charleston Rd, Tipp City, OH',
+            'Zip Code': 45371,
+            'Your name': 'Ron Corbett',
+            'Phone number': '(937) 524-4058',
+            'E-mail': 'nativeohio@earthlink.net',
+            'Preferred contact method': 'Email',
+            'Notes': 'Visits to the nursery can be made by appointment or at sales shown on the nursery website (nativeohioplants.com). The nursery specializes in container grown trees, shrubs, and wildflowers native to Ohio that have been propagated from locally gathered seed.',
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
+        }
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/28/2020 9:47:56',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Star Farms Native Plants',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Open to the Public, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '14789 State Route 292, Kenton',
+            'Zip Code': 43326,
+            'Your name': 'Dave McPheron',
+            'Phone number': '937-935-3970',
+            'E-mail': 'starfarmsnatives@gmail.com',
+            'Preferred contact method': 'Phone, Email',
             'Notes': 'contact information is available at\\nwww.ohionativegrowers.org\\nFaceBook @starfarmsnativeplants',
-            'Questions and comments': "null",
-            'Zip': 43326.0,
-            'Facebook': "www.facebook.com/starfarmsnativeplants",
-            'Test': "null",
-            'point': (40.61375907839345,
-                -83.59621083913143,
-                0.0),
-            'Latitude': 40.61375907839345,
-            'Longitude': -83.59621083913143,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -83.59621083913143,
-                40.61375907839345
-            ]
+            'coordinates': [nan, nan]
         }
-    },
-    {
+    }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '2/6/2020 10: 42: 20',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': 'The Common Milkweed',
-            'State_1': 'OH',
-            'Type': 'Retail, Small/Home Business',
-            'Native _%': '100',
-            'Native': 'Yes',
-            'Keep': 'Plants, Herbaceous, Woody, Shrubs, Bare Root',
-            'Grow_Type': 'Germinated from seed',
-            'Specialty': 'Native Plants',
-            'Address': '3344 Township Road 26',
-            'Owner_Con': 'Jennifer Kleinrichert',
-            'Contact_Number': '5056996929',
-            'Contact_Email': 'jennifer@thecommonmilkweed.com',
-            'Preferred_Contact': 'Email',
-            'Notes': "null",
-            'Questions and comments': "null",
-            'Zip': 43315.0,
-            'Facebook': "www.thecommonmilkweed.com",
-            'Test': "null",
-            'point': (40.92519,
-                -84.360347,
-                0.0),
-            'Latitude': 40.92519,
-            'Longitude': -84.360347,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+            'Timestamp': '2/6/2020 10:42:20',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'The Common Milkweed',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Woody, Shrubs, Bare Root',
+            'Are your plants...': 'Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '3344 Township Road 26, Cardington',
+            'Zip Code': 43315,
+            'Your name': 'Jennifer Kleinrichert',
+            'Phone number': '5056996929',
+            'E-mail': 'jennifer@thecommonmilkweed.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': (40.5004881, -82.8942351, 0.0),
+            'latitude': 40.5004881,
+            'longitude': -82.8942351,
+            'elevation': 0.0
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [
-                -84.360347,
-                40.92519
-            ]
+            'coordinates': [-82.8942351, 40.5004881]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Cold Stream Farm",
-            "Contact_Email": "mull",
-            "Contact_Number": "(231) 464-5809",
-            "State": "MI",
-            "Address": "8585 N. Stephens Rd. Free Soil, MI 49411",
-            "Street": "8585 N. Stephens Rd.",
-            "City": "Free Soil",
-            "State_1": "MI",
-            "Zip": 49411,
-            "Keep": "bare root trees and shrubs",
-            "Type": "Wholesale and retail. Order online, via phone, or mail orderform",
-            "Latitude": 44.109779,
-            "Longitude": -86.200611,
-            "Owner_Con": "mull",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.coldstreamfarm.net",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '3/24/2020 11:41:46',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Powells Native Wildflowers',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Online, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Woody',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '7310 Glorine St NW, North Canton',
+            'Zip Code': 44720,
+            'Your name': 'Tim Powell',
+            'Phone number': '2342145763',
+            'E-mail': 'powellsnativewildflowers@gmail.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'www.powellsnativewildflowers.com',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -86.200611,
-                44.109779
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Companion Plants, Inc.",
-            "Contact_Email": "peter@companionplants.com",
-            "Contact_Number": "740-592-4643",
-            "State": "OH",
-            "Address": "7247 N. Coolville Ridge Rd., Athens, OH 45701",
-            "Street": "7247 N. Coolville Ridge Rd.",
-            "City": "Athens",
-            "State_1": "OH",
-            "Zip": 45701,
-            "Keep": "forbs, seeds",
-            "Type": "Shop online or visit. Open to public March-October, by appointment otherwise.",
-            "Latitude": 39.29928,
-            "Longitude": -82.039099,
-            "Owner_Con": "Peter Borchard",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.companionplants.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '4/1/2020 12:18:50',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Natives in Harmony',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Wholesale, Retail, Open to the Public, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '4652 Township Road 179, Marengo',
+            'Zip Code': 43334,
+            'Your name': 'Gale Martin',
+            'Phone number': '419-688-9800',
+            'E-mail': 'gale@nativesinharmony.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': 'forbs (specializing in state listed species and less common natives), Do not provide mail order plants. Plant list available on website for reference.',
+            'Questions and comments': nan,
+            'Website': 'www.nativesinharmony.com/default.html',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -82.039099,
-                39.29928
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Keystone Flora",
-            "Contact_Email": "mull",
-            "Contact_Number": "513.961.2727",
-            "State": "OH",
-            "Address": "5081 Woodenshoe Hollow Lane Cincinnati, OH 45232",
-            "Street": "5081 Woodenshoe Hollow Lane",
-            "City": "Cincinnati",
-            "State_1": "OH",
-            "Zip": 45232,
-            "Keep": "forbs, grasses, vines, shrubs, trees native to Ohio, Kentucky, Indiana",
-            "Type": "Meet by appointment, call or email. Open Sat. & Tues. 10-3:00. Plant lists available on website.",
-            "Latitude": 39.182233,
-            "Longitude": -84.516005,
-            "Owner_Con": "mull",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.keystoneflora.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '4/3/2020 9:35:14',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Riverside Native Trees',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Online, Appointment Only',
+            'What percent of your inventory is Native?': 90,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Organic, Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '2295 River Road, Delaware',
+            'Zip Code': 43015,
+            'Your name': 'Ed Kapraly',
+            'Phone number': '740-815-3230',
+            'E-mail': 'ekapraly@gmail.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'www.riversidenativetrees.com/',
+            'point': (42.02918143680762, -75.03849564609821, 0.0),
+            'latitude': 42.02918143680762,
+            'longitude': -75.03849564609821,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -84.516005,
-                39.182233
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-75.03849564609821, 42.02918143680762]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Nodding Onion Gardens Native Plant Nursery",
-            "Contact_Email": "mull",
-            "Contact_Number": "none listed",
-            "State": "OH",
-            "Address": "Columbia Station, OH 44028",
-            "Street": "mull",
-            "City": "Columbia Station",
-            "State_1": "OH",
-            "Zip": 44028,
-            "Keep": "Perennials native to Ohio",
-            "Type": "NOT OPEN TO PUBLIC; ORDER VIA WEB/FROSTVILLE FARMER'S MARKET",
-            "Latitude": 41.312327,
-            "Longitude": -81.947088,
-            "Owner_Con": "Beth and Marty Coyne",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.noddingoniongardens.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '12/21/2020 12:44:05',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Plant It Native',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': 'Willoughby Hills, OH',
+            'Zip Code': 44094,
+            'Your name': 'Josh Myers',
+            'Phone number': nan,
+            'E-mail': 'josh@plantitnativeohio.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'Plants available for purchase online or at Willoughby Outdoor Market with in person pickup. Nursery not open to the public.Â\\xa0',
+            'Questions and comments': nan,
+            'Website': 'www.plantitnativeohio.com',
+            'point': (41.598382, -81.418447, 0.0),
+            'latitude': 41.598382,
+            'longitude': -81.418447,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.947088,
-                41.312327
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.418447, 41.598382]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "North Creek Nursery",
-            "Contact_Email": "steve@northcreeknurseries.com",
-            "Contact_Number": "610-255-0100",
-            "State": "PA",
-            "Address": "388 North Creek Road Landenberg, PA 19350",
-            "Street": "388 North Creek Road",
-            "City": "Landenberg",
-            "State_1": "PA",
-            "Zip": 19350,
-            "Keep": "plugs of native eastern US perennials, ornamental grasses, ferns and vines",
-            "Type": "Wholesale only.  $500 minimum for first time customers. Also scott@northcreeknurseries.com or info@northcreeknurseries.com",
-            "Latitude": 39.776126,
-            "Longitude": -75.8096,
-            "Owner_Con": "Steve Castorani",
-            "Sales_Con": "Claudia West",
-            "General E": "info@northcreeknurseries.com",
-            "Facebook": "www.northcreeknurseries.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/25/2021 10:07:45',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Plant It Native, LLC',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Woody, Shrubs',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2 Public Square, Willoughby Hills',
+            'Zip Code': 44094,
+            'Your name': 'Josh Myers',
+            'Phone number': '4402260480',
+            'E-mail': 'josh@plantitnativeohio.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'Nursery not open to the public. Plants can be purchased in person at the Willoughby Farmers Market or online with pickup at the market from May to October.',
+            'Questions and comments': nan,
+            'Website': 'www.plantitnativeohio.com',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -75.8096,
-                39.776126
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Ohio Prairie Nursery",
-            "Contact_Email": "bob@opnseed.com",
-            "Contact_Number": "866-569-3380",
-            "State": "OH",
-            "Address": "11961 Alpha Rd, Hiram, OH 44234",
-            "Street": "11961 Alpha Rd",
-            "City": "Hiram",
-            "State_1": "OH",
-            "Zip": 44234,
-            "Keep": "seeds (grasses, rushes, forbs)",
-            "Type": "ORDERS TAKEN BY PHONE or On line Store",
-            "Latitude": 41.319013,
-            "Longitude": -81.161641,
-            "Owner_Con": "Bob & Sandy Kehres",
-            "Sales_Con": "Bob/Dave",
-            "General E": "info@ohioprairienursery.com",
-            "Facebook": "www.ohioprairienursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/26/2021 8:55:06',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Hilltop Hollow Farm',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'PA',
+            'Type of Nursery': 'Wholesale, Retail, Online, Open to the Public',
+            'What percent of your inventory is Native?': 70,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Organic, Wetland Restoration, Native Plants',
+            'Address (Format: street, city)': '545 Thomas Hill Rd., Bellefonte',
+            'Zip Code': 16823,
+            'Your name': 'Steve Dahm',
+            'Phone number': '814-424-3240',
+            'E-mail': 'hilltophollowfarm@gmail.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'We sell bare root plants through the mail from Nov-May, and potted plants at the farm from April-Sept.',
+            'Questions and comments': nan,
+            'Website': 'www.hilltophollowfarm.com/',
+            'point': (40.97983785, -77.82586218573906, 0.0),
+            'latitude': 40.97983785,
+            'longitude': -77.82586218573906,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.161641,
-                41.319013
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-77.82586218573906, 40.97983785]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Taylor Creek Restoration Nurseries - Brodhead",
-            "Contact_Email": "mull",
-            "Contact_Number": "(608) 897-8641",
-            "State": "WI",
-            "Address": "17921 Smith Road P.O. Box 256 Brodhead, WI 53520",
-            "Street": "17921 Smith Road",
-            "City": "Brodhead",
-            "State_1": "WI",
-            "Zip": 53520,
-            "Keep": "seed, plug, and contract grow natives of the upper midwest",
-            "Type": "Wholesale and retail. Retail Assistance and Sales by Appointment Only. Species list, catalog, and order forms found on website.",
-            "Latitude": 42.558323,
-            "Longitude": -89.353304,
-            "Owner_Con": "Steven Apfelbaum",
-            "Sales_Con": "Cindy Whitehead",
-            "General E": "tcrn@restorationnurseries.com",
-            "Facebook": "www.restorationnurseries.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '7/9/2021 10:15:32',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'scott sandbrink',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 80,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '2526 Hankins Rd NW, Massillon',
+            'Zip Code': 44646,
+            'Your name': 'scott sandbrink',
+            'Phone number': '330-265-9066',
+            'E-mail': 'workinggardens1@gmail.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': 'We specialize innative plants with an emphasis on shade plants. Visits are welcome',
+            'Questions and comments': 'I am a member of the team at ArcheWild Native Nurseries. We area large exclusively native plant grower in Northeast PA. We are also the only nursery to stock EPA Ecoregion Level IV specific genetic strains of popular and hard-to-find native plants. We carry hundreds of species of native plants, andhave a particular focus on highly desirable or rare indigenous plants from seed sources within the Northern Piedmont and surrounding ecoregions.\\n\\nI would love for our nursery to be added to your list of resources, please let me know if there is anything else I can do to get it added',
+            'Website': 'workinggardens.com',
+            'point': (40.81107391992009, -81.48738897869895, 0.0),
+            'latitude': 40.81107391992009,
+            'longitude': -81.48738897869895,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -89.353304,
-                42.558323
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.48738897869895, 40.81107391992009]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Pinelands",
-            "Contact_Email": "mull",
-            "Contact_Number": "609-291-9486",
-            "State": "NJ",
-            "Address": "323 Island Road Columbus, NJ 08022",
-            "Street": "323 Island Road",
-            "City": "Columbus",
-            "State_1": "NJ",
-            "Zip": 8022,
-            "Keep": "Wholesale only. Contact for catalog.",
-            "Type": "Wholesale only",
-            "Latitude": 40.0673,
-            "Longitude": -74.7046,
-            "Owner_Con": "Don Knezick",
-            "Sales_Con": "Fran Chismar",
-            "General E": "mull",
-            "Facebook": "www.pinelandsnursery.com/p/home-page.html",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/8/2022 13:36:29',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Leaves for Wildlife',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'Oh',
+            'Type of Nursery': 'Retail, Open to the Public',
+            'What percent of your inventory is Native?': 99,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Woody, Shrubs, Bare Root, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '1655 N CR 605, Sunbury OH 43074',
+            'Zip Code': 43074,
+            'Your name': 'Patty Hagopian Shipley',
+            'Phone number': '614-881-5550',
+            'E-mail': 'leavesforwildlife@yahoo.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': 'Am expanding to focus on permaculture',
+            'Questions and comments': 'Let me know if you need additional info',
+            'Website': 'www.leavesforwildlife.com',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -74.7046,
-                40.0673
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Plant Delights, Inc.",
-            "Contact_Email": "tony@plantdelights.com",
-            "Contact_Number": "919.772.4794",
-            "State": "NC",
-            "Address": "9241 Sauls Road, Raleigh, NC 27603",
-            "Street": "9241 Sauls Road",
-            "City": "Raleigh",
-            "State_1": "NC",
-            "Zip": 27603,
-            "Keep": "Only perennials",
-            "Type": "Retail only. Visitors are welcome by appointment only.",
-            "Latitude": 35.626352,
-            "Longitude": -78.639563,
-            "Owner_Con": "Tony and Anita Avent",
-            "Sales_Con": "Jim Burgan",
-            "General E": "jim@plantdelights.com",
-            "Facebook": "www.plantdelights.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/22/2022 14:00:16',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Riverside Native Perennials',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'Oh',
+            'Type of Nursery': 'Wholesale, Retail, Online, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2295 River Road, Delaware',
+            'Zip Code': 43015,
+            'Your name': 'Edward Kapraly',
+            'Phone number': '7408153230',
+            'E-mail': 'ekapraly@gmail.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'We grow native plugs and larger containers. We have some Ohio genotype plants and working to get more.',
+            'Questions and comments': 'Currently working on the website. Hope to be ready by 3/1/2022',
+            'Website': 'www.riversidenativeperennials.com',
+            'point': (42.02918143680762, -75.03849564609821, 0.0),
+            'latitude': 42.02918143680762,
+            'longitude': -75.03849564609821,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -78.639563,
-                35.626352
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-75.03849564609821, 42.02918143680762]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Prairie Moon Nursery",
-            "Contact_Email": "rebecca@prairiemoon.com",
-            "Contact_Number": "(866) 417-8156",
-            "State": "MN",
-            "Address": "32115 Prairie Lane Winona, MN 55987",
-            "Street": "32115 Prairie Lane",
-            "City": "Winona",
-            "State_1": "MN",
-            "Zip": 55987,
-            "Keep": "Seeds, seed mixes, bare root plants, potted plants native to the upper midwest of the country",
-            "Type": "Mail order nursery. Order online, by mail, or fax. Free color catalog and cultural guide available on website.",
-            "Latitude": 43.902925,
-            "Longitude": -91.636986,
-            "Owner_Con": "Many",
-            "Sales_Con": "Rebecca Brewer",
-            "General E": "rebecca@prairiemoon.com",
-            "Facebook": "www.prairiemoon.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/23/2022 11:48:13',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Leaves for Wildlife',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Open to the Public',
+            'What percent of your inventory is Native?': 99,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Woody, Shrubs, Bare Root, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '1655 N CR 605, Sunbury',
+            'Zip Code': 43074,
+            'Your name': 'Patty Shipley',
+            'Phone number': '6148815550',
+            'E-mail': 'leavesforwildlife8@gmail.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': 'This nursery was inspired by the works of Douglas Tallamy. Our mission is to inspire habitat restoration in our nearby community and beyond.',
+            'Questions and comments': nan,
+            'Website': 'www.leavesforwildlife.com',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -91.636986,
-                43.902925
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Scioto Gardens Landscape Nursery",
-            "Contact_Email": "sales@sciotogardens.com",
-            "Contact_Number": "740.363.8264",
-            "State": "OH",
-            "Address": "3351 S.R. 37 W. - Delaware, OH 43015",
-            "Street": "3351 S.R. 37 W.",
-            "City": "Delaware",
-            "State_1": "OH",
-            "Zip": 43015,
-            "Keep": "perennials, ferns, grasses, shrubs, trees",
-            "Type": "Nursery open to public. Plant list available online.",
-            "Latitude": 40.32028,
-            "Longitude": -83.13254,
-            "Owner_Con": "Michael Johnson",
-            "Sales_Con": "Michael Johnson",
-            "General E": "sales@sciotogardens.com",
-            "Facebook": "www.sciotogardens.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '1/26/2022 17:15:52',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Wild Hare Prairie Native Nursery',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '350 East Beaumont Rd, Columbus',
+            'Zip Code': 43214,
+            'Your name': 'Christy Elena Harris',
+            'Phone number': '614-271-9613',
+            'E-mail': 'christyelena@att.net',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': nan,
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -83.13254,
-                40.32028
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Spence Restoration Nursery",
-            "Contact_Email": "mull",
-            "Contact_Number": "(765) 286-7154",
-            "State": "IN",
-            "Address": "2220 East Fuson Road Muncie, IN 47302",
-            "Street": "2220 East Fuson Road",
-            "City": "Muncie",
-            "State_1": "IN",
-            "Zip": 47302,
-            "Keep": "Native Great Lake and Ohio Valley region seeds and plugs",
-            "Type": "Wholesale only, no retail sales",
-            "Latitude": 40.152703,
-            "Longitude": -85.359253,
-            "Owner_Con": "mull",
-            "Sales_Con": "Kevin Tungesvick",
-            "General E": "mull",
-            "Facebook": "www.spencenursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '3/15/2022 15:01:44',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'ArcheWild Native Nurseries',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'PA',
+            'Type of Nursery': 'Wholesale, Retail',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance)',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2191 Hillcrest Road, Quakertown',
+            'Zip Code': 18951,
+            'Your name': 'Laura DeHart',
+            'Phone number': '570-778-5487',
+            'E-mail': 'Laura.DeHart@ArcheWild.com',
+            'Preferred contact method': 'Email',
+            'Notes': 'I am a member of the team at ArcheWild Native Nurseries. We area large exclusively native plant grower in Northeast PA. We are also the only nursery to stock EPA Ecoregion Level IV specific genetic strains of popular and hard-to-find native plants. We carry hundreds of species of native plants, andhave a particular focus on highly desirable or rare indigenous plants from seed sources within the Northern Piedmont and surrounding ecoregions.\\n\\nI would love for our nursery to be added to your list of resources, please let me know if there is anything else I can do to get it added',
+            'Questions and comments': nan,
+            'Website': 'www.archewild.com/nursery/',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -85.359253,
-                40.152703
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Genius Loci, inc",
-            "Contact_Email": "craiglimpach@gmail.com",
-            "Contact_Number": "440-324-3465",
-            "State": "OH",
-            "Address": "Elyria, OH 44035",
-            "Street": "Elyria",
-            "City": "44035",
-            "State_1": "OH",
-            "Zip": 44035,
-            "Keep": "Native Plants",
-            "Type": "Open by appointment only",
-            "Latitude": 41.414073,
-            "Longitude": -82.142785,
-            "Owner_Con": "Craig Limpach",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.indigination.com/contact.htm",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '4/1/2022 9:44:59',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Wild Toledo ',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Online',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Ferns, Woody, Shrubs, Bare Root, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '2 Hippo Way, Toledo',
+            'Zip Code': 43609,
+            'Your name': 'Pamela Steider',
+            'Phone number': '4193855721 ex 2153',
+            'E-mail': 'pamela.steider@toledozoo.org',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'www.wildtoledo.org',
+            'point': (41.6232403, -83.5787461, 0.0),
+            'latitude': 41.6232403,
+            'longitude': -83.5787461,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -82.142785,
-                41.414073
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-83.5787461, 41.6232403]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Gardenscapes by Joanna",
-            "Contact_Email": "gardenscapesbyjoanna@yahoo.com",
-            "Contact_Number": "(440) 935-5074",
-            "State": "OH",
-            "Address": "15365 Gifford Road Oberlin, OH 44074",
-            "Street": "15365 Gifford Road",
-            "City": "Oberlin",
-            "State_1": "OH",
-            "Zip": 44074,
-            "Keep": "perennials, trees, shrubs",
-            "Type": "Retail. Nursery is open by appointment only.",
-            "Latitude": 41.260074,
-            "Longitude": -82.288716,
-            "Owner_Con": "Joanna Thomas",
-            "Sales_Con": "Joanna",
-            "General E": "gardenscapesbyjoanna@yahoo.com",
-            "Facebook": "www.gardenscapesbyjoanna.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '5/9/2022 7:56:47',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Avalon Gardens has been changed to Avonlea Gardens & Inn',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Online, Open to the Public',
+            'What percent of your inventory is Native?': 75,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Shrubs, Containerized Trees',
+            'Are your plants...': 'Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '12511 Fowlers Mill Rd, Chardon',
+            'Zip Code': 44024,
+            'Your name': 'Amy Goletz',
+            'Phone number': '14406227225',
+            'E-mail': 'amy@avonleagardensandinn.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'https://avonleagardensandinn.com/',
+            'point': None,
+            'latitude': nan,
+            'longitude': nan,
+            'elevation': nan
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -82.288716,
-                41.260074
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [nan, nan]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Pizzo Native Plant Nursery",
-            "Contact_Email": "jackp@pizzo.info",
-            "Contact_Number": "815.826.0566",
-            "State": "IL",
-            "Address": "10729 Pine Road Leland, IL 60531",
-            "Street": "10729 Pine Road",
-            "City": "Leland",
-            "State_1": "IL",
-            "Zip": 60531,
-            "Keep": "Plugs and seed mixes of native prarie, woodland, and wetland plants, will contract grow. Certain times of the year  spring ephemerals, emergent, and submergent species may be avaialable",
-            "Type": "Wholesale and retail. For a wholesale purchase call, email, or fax the order. The minimum order is one full flat.",
-            "Latitude": 41.674577,
-            "Longitude": -88.738121,
-            "Owner_Con": "Jack Pizzo",
-            "Sales_Con": "Grace Koehler",
-            "General E": "gracek@pizzonursery.com",
-            "Facebook": "www.pizzonursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '5/23/2022 22:34:19',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Erie Shore Gardens',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'Oh',
+            'Type of Nursery': 'Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns, Woody, Bare Root',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '24263 Lake Rd, Bay Village',
+            'Zip Code': 44140,
+            'Your name': 'Amy Coursen',
+            'Phone number': '2164010080',
+            'E-mail': 'erieshoregardens@gmail.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'None',
+            'point': (41.483271897959185, -81.88804514285715, 0.0),
+            'latitude': 41.483271897959185,
+            'longitude': -81.88804514285715,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -88.738121,
-                41.674577
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.88804514285715, 41.483271897959185]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Envirotech Consultants/ Nursery",
-            "Contact_Email": "mull",
-            "Contact_Number": "740.743.1669",
-            "State": "OH",
-            "Address": "5380 Township, 143 NE, Somerset, OH 43783",
-            "Street": "5380 Township 143 NE",
-            "City": "Somerset",
-            "State_1": "OH",
-            "Zip": 43783,
-            "Keep": "native plant material, prairie,wetland, and forest ecosystems",
-            "Type": "WHOLESALE/retail and custom grow plant materials for Habitat Restoration",
-            "Latitude": 39.772387,
-            "Longitude": -82.298438,
-            "Owner_Con": "mull",
-            "Sales_Con": "John Kiertscher",
-            "General E": "info@envirotechcon.com",
-            "Facebook": "www.envirotechcon.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '5/27/2022 10:32:57',
+            'Are you changing a listing or adding a new one?': 'Existing Nursery',
+            'Nursery Name': 'Working Gardens Ltd.',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 80,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Ferns',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Organic, Native Plants',
+            'Address (Format: street, city)': '2526 Hankins Rd NW, Massillon',
+            'Zip Code': 44646,
+            'Your name': 'Scott Sandbrink',
+            'Phone number': '330-265-9066',
+            'E-mail': 'workinggardens1@gmail.com',
+            'Preferred contact method': 'Phone, Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'http://workinggardens.com',
+            'point': (40.81107391992009, -81.48738897869895, 0.0),
+            'latitude': 40.81107391992009,
+            'longitude': -81.48738897869895,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -82.298438,
-                39.772387
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.48738897869895, 40.81107391992009]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "ArcheWild Native Nurseries",
-            "Contact_Email": "contact@archewild.com",
-            "Contact_Number": "855-752-6862",
-            "State": "PA",
-            "Address": "2191 Hillcrest Road Quakertown, PA 18951",
-            "Street": "2191 Hillcrest Road",
-            "City": "Quakertown",
-            "State_1": "PA",
-            "Zip": 18951,
-            "Keep": "Native plants",
-            "Type": "Wholesale and retail",
-            "Latitude": 40.42371,
-            "Longitude": -75.386813,
-            "Owner_Con": "mull",
-            "Sales_Con": "mull",
-            "General E": "contact@archewild.com",
-            "Facebook": "www.archewild.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '8/7/2022 10:45:17',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Cincinnati Nature Center',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Appointment Only',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous, Shrubs, Containerized Trees',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed, Grown by clonal dividing',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '4949 Tealtown Road, Milford',
+            'Zip Code': 45150,
+            'Your name': 'Jacob Sberna',
+            'Phone number': '513-831-1711',
+            'E-mail': 'jsberna@cincynature.org',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'Cincynature.org',
+            'point': (39.128487, -84.242623, 0.0),
+            'latitude': 39.128487,
+            'longitude': -84.242623,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -75.386813,
-                40.42371
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-84.242623, 39.128487]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Avalon Gardens",
-            "Contact_Email": "mull",
-            "Contact_Number": "440.286.2126",
-            "State": "OH",
-            "Address": "12511 Fowlers Mill Rd. Chardon, OH 44024",
-            "Street": "12511 Fowlers Mill Rd.",
-            "City": "Chardon",
-            "State_1": "OH",
-            "Zip": 44024,
-            "Keep": "perennials, shrubs, trees, grasses",
-            "Type": "mull",
-            "Latitude": 41.528648,
-            "Longitude": -81.255323,
-            "Owner_Con": "Mary Slingluff",
-            "Sales_Con": "mull",
-            "General E": "mslingluff@roadrunner.com",
-            "Facebook": "www.avalongardensinn.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '8/18/2022 6:47:07',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Meadow City Native Plant Nursery',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Herbaceous',
+            'Are your plants...': 'Grown from known seed locations (can track provenance), Germinated from seed',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '15006 Westropp Ave, Cleveland',
+            'Zip Code': 44110,
+            'Your name': 'Julie Slater',
+            'Phone number': '2162826911',
+            'E-mail': 'julie@meadowcitynursery.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'www.meadowcitynursery.com',
+            'point': (41.56837187173316, -81.57638849432183, 0.0),
+            'latitude': 41.56837187173316,
+            'longitude': -81.57638849432183,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.255323,
-                41.528648
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.57638849432183, 41.56837187173316]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Klyn Nurseries",
-            "Contact_Email": "kczajka@klynnurseries.com",
-            "Contact_Number": "1-800-860-8104",
-            "State": "OH",
-            "Address": "3322 S. Ridge Rd. Perry, OH 44081",
-            "Street": "3322 S. Ridge Rd.",
-            "City": "Perry",
-            "State_1": "OH",
-            "Zip": 44081,
-            "Keep": "grasses, perennials, ferns, vines, roses (shrub and climbing), dwarf conifers, shade and ornamental trees",
-            "Type": "WHOLESALE ONLY",
-            "Latitude": 41.737253,
-            "Longitude": -81.16448,
-            "Owner_Con": "Bill Hendricks",
-            "Sales_Con": "Kevin Czajka",
-            "General E": "kczajka@klynnurseries.com",
-            "Facebook": "www.klynnurseries.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
+    }, {
+        'type': 'Feature',
+        'properties': {
+            'Timestamp': '8/27/2022 18:38:43',
+            'Are you changing a listing or adding a new one?': 'New Nursery',
+            'Nursery Name': 'Down Nature"'"s Path ',
+            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
+            'Type of Nursery': 'Retail, Appointment Only, Small/Home Business',
+            'What percent of your inventory is Native?': 100,
+            'Do you have Ohio Native Species?': 'Yes',
+            'What does your inventory consist of?': 'Plants, Shrubs',
+            'Are your plants...': 'Germinated from seed, Grown from starter plugs',
+            'Does your nursery specialize in...': 'Native Plants',
+            'Address (Format: street, city)': '8767 Grote Rd, Greenville ',
+            'Zip Code': 45331,
+            'Your name': 'Molly Kenney',
+            'Phone number': '937-548-1948',
+            'E-mail': 'dnpnatives@gmail.com',
+            'Preferred contact method': 'Email',
+            'Notes': nan,
+            'Questions and comments': nan,
+            'Website': 'https://www.dnpnatives.com/',
+            'point': None,
+            'latitude': 40.172780381466666,
+            'longitude': -84.61760354423504,
+            'elevation': 0.0
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.16448,
-                41.737253
-            ]
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-84.61760354423504, 40.172780381466666]
         }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Southern Tier Consulting",
-            "Contact_Email": "froghome@southerntierconsulting.com",
-            "Contact_Number": "585-968-3120",
-            "State": "NY",
-            "Address": "2701-A Route 305 Cuba, NY 14727",
-            "Street": "2701-A Route 305",
-            "City": "Cuba ",
-            "State_1": "NY",
-            "Zip": 14727,
-            "Keep": "we supply wetland and upland plant material ",
-            "Type": "Wetland and bank restoraiton",
-            "Latitude": 42.118231,
-            "Longitude": -78.253869,
-            "Owner_Con": "Johneta Wilson",
-            "Sales_Con": "mull",
-            "General E": "froghome@southerntierconsulting.com",
-            "Facebook": "www.southerntierconsulting.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -78.253869,
-                42.118231
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Ernst Conservation Seeds, Inc.",
-            "Contact_Email": "mull",
-            "Contact_Number": "(800) 873-3321",
-            "State": "PA",
-            "Address": "8884 Mercer Pike, Meadville PA 16335",
-            "Street": "8884 Mercer Pike",
-            "City": "Meadville",
-            "State_1": "PA",
-            "Zip": 16335,
-            "Keep": "Seeds native to eastern North America",
-            "Type": "Catalog and price list available on website. Can order by mail, phone, fax, or email.",
-            "Latitude": 41.588546,
-            "Longitude": -80.153423,
-            "Owner_Con": "Calvin Ernst",
-            "Sales_Con": "Nikki Hindle",
-            "General E": "mull",
-            "Facebook": "www.ernstseed.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -80.153423,
-                41.588546
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Native Roots, Inc.",
-            "Contact_Email": "sonia.bingham@nativerootsinc.com",
-            "Contact_Number": "330-704-5735",
-            "State": "OH",
-            "Address": "3576 Five Oaks Drive, Richfield, OH 44286",
-            "Street": "3576 Five Oaks Drive",
-            "City": "Richfield",
-            "State_1": "OH",
-            "Zip": 44286,
-            "Keep": "Sister Owned and Operated Native Plant Nursery",
-            "Type": "Homeowner and restoration practitioners. Specialize in restoration of wetlands and floodplains.  Have many varieties that are excellent for butterfly gardens.  Create specialty seed packets and grows material from hand-collected seed.",
-            "Latitude": 41.210223,
-            "Longitude": -81.621876,
-            "Owner_Con": "Sonia Bingham",
-            "Sales_Con": "Sonia Bingham",
-            "General E": "sonia.bingham@nativeroots.com",
-            "Facebook": "www.nativerootsinc.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.621876,
-                41.210223
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Woody Warehouse Nursery",
-            "Contact_Email": "peteberg@woodywarehouse.com",
-            "Contact_Number": "866-766-8367",
-            "State": "IN",
-            "Address": "3339 W. 850 N. Lizton, IN 46149",
-            "Street": "3339 W. 850 N.",
-            "City": "Lizton",
-            "State_1": "IN",
-            "Zip": 46149,
-            "Keep": "Native hardwoods in containers, contract grow available",
-            "Type": "Wholesale and retail by appointment",
-            "Latitude": 39.88634,
-            "Longitude": -86.582569,
-            "Owner_Con": "Paul Berg Peggy Berg Kent Berg Peter Berg",
-            "Sales_Con": "Pete Berg",
-            "General E": "sales@wodywarehouse.com",
-            "Facebook": "www.woodywarehouse.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -86.582569,
-                39.88634
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Riverview Nursery, Inc",
-            "Contact_Email": "riverview.flowers@gmail.com",
-            "Contact_Number": "260-704-5092",
-            "State": "IN",
-            "Address": "5635 CR 72",
-            "Street": "mull",
-            "City": "Spencerville",
-            "State_1": "IN",
-            "Zip": 46788,
-            "Keep": "Local genotype native plants for landscapes and gardens",
-            "Type": "Perennial forbs, grasses, shrubs and trees for wet, mesic and dry soils. Most require some sun.",
-            "Latitude": 41.268499,
-            "Longitude": -84.92573,
-            "Owner_Con": "Martha Ferguson",
-            "Sales_Con": "Martha Ferguson",
-            "General E": "riverview.flowers@gmail.com",
-            "Facebook": "www.riverviewNativeNursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -84.92573,
-                41.268499
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Perennials Preferred",
-            "Contact_Email": "penny.h.orr@gmail.com",
-            "Contact_Number": "440 729 7885",
-            "State": "OH",
-            "Address": "7572 Mayfield Road, Chesterland, Ohio 44026",
-            "Street": "7572 Mayfield Road",
-            "City": "Chesterland",
-            "State_1": "OH",
-            "Zip": 44026,
-            "Keep": "Perennials, Annuals, Organic Untreated Heirloom Seeds, Vegetable Plants, Soil Amendments, Pollinator Boxes, Bird Seed & Feeders and Other Garden Related Goods & Gifts",
-            "Type": "Specialize in growing and stocking unusual plants including a good (and growing) selection of Natives. Will do special orders. ",
-            "Latitude": 41.524441,
-            "Longitude": -81.370395,
-            "Owner_Con": "Penny Orr",
-            "Sales_Con": "Julie Bewley",
-            "General E": "perennialspreferred@gmail.com",
-            "Facebook": "www.perennialspreferred.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.370395,
-                41.524441
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Grace Brothers Nursery & Supply",
-            "Contact_Email": "gracebrothers@sbcglobal.net",
-            "Contact_Number": "440-237-2577",
-            "State": "OH",
-            "Address": "12905 Ridge Road, North Royalton, Ohio 44133",
-            "Street": "12905 Ridge Road",
-            "City": "North Royalton",
-            "State_1": "OH",
-            "Zip": 44133,
-            "Keep": "6 acres of perennials, trees and shrubs. �If we do not have it in stock we can get it in within a week or two.",
-            "Type": "Retail & Wholesale",
-            "Latitude": 41.320158,
-            "Longitude": -81.733824,
-            "Owner_Con": "Kevin & Don Grace",
-            "Sales_Con": "Nicholle or Brian",
-            "General E": "gracebrothers@sbcglobal.net",
-            "Facebook": "www.gracebrosnursery.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -81.733824,
-                41.320158
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "Nursery": "Quail Ridge Specimen Trees",
-            "Contact_Email": "dstruve51@gmail.com",
-            "Contact_Number": "(614) 313-5975",
-            "State": "OH",
-            "Address": "6335 Oregonia Rd, Oregonia, OH 45054",
-            "Street": "6335 Oregonia Road",
-            "City": "Oregonia",
-            "State_1": "OH",
-            "Zip": 45054,
-            "Keep": "3-gallon and 20 gallon locally sourced native trees and shrubs",
-            "Type": "Retail",
-            "Latitude": 39.45471,
-            "Longitude": -84.080879,
-            "Owner_Con": "mull",
-            "Sales_Con": "mull",
-            "General E": "mull",
-            "Facebook": "www.qrstrees.com",
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                -84.08084750175476,
-                39.457385946858714
-            ]
-        }
-    }
-    ]
-})
+    }]
+}]
+
 
 
 
