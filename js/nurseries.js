@@ -575,47 +575,6 @@ var geoJson = ({
     {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/24/2020 13: 26: 57',
-            'Nursery_Status': 'New Nursery',
-            'Nursery': "Mary's Plant Farm & Landscaping",
-            'State_1': 'OH',
-            'Type': 'Retail, Open to the Public, Catalog',
-            'Native _%': '60',
-            'Native': 'Yes',
-            'Keep': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
-            'Grow_Type': 'Germinated from seed, Grown by clonal dividing',
-            'Specialty': 'Native Plants',
-            'Address': '2410 Lanes Mill Rd',
-            'Owner_Con': 'Sherri Berger, manager',
-            'Contact_Number': '5138940022',
-            'Contact_Email': 'marysplantfarm@zoomtown.com',
-            'Preferred_Contact': 'Email',
-            'Notes': "We are a family owned and operated nursery in our 44th season, growing our plants for hardiness in Ohio soil in our fields, not in a soilless mix in a greenhouse.  During business hours our customers are encouraged to walk Mary's private gardens that are 75 years old, showing mature plants and the locations where they prefer to grow .",
-            'Questions and comments': 'Our complete catalog is found at www.marysplantfarm.com',
-            'Zip': 45013.0,
-            'Facebook': "www.marysplantfarm.com",
-            'Test': "null",
-            'point': (39.45098978091304,
-                -84.68346205196627,
-                0.0),
-            'Latitude': 39.45098978091304,
-            'Longitude': -84.68346205196627,
-            'elevation': 0.0,
-            "marker-color": "#254503",
-            "marker-size": "small",
-            "marker-symbol": "garden"
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [
-                -84.68346205196627,
-                39.45098978091304
-            ]
-        }
-    },
-    {
-        'type': 'Feature',
-        'properties': {
             'Timestamp': '1/25/2020 12: 34: 24',
             'Nursery_Status': 'Existing Nursery',
             'Nursery': 'Stone Silo Prairie Gardens ',
