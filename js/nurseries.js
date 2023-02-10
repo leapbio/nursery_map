@@ -370,37 +370,6 @@ var geoJson = ({'type': 'FeatureCollection', 'features': [{
     }, {
         'type': 'Feature',
         'properties': {
-            'Timestamp': '1/24/2020 13:26:57',
-            'Are you changing a listing or adding a new one?': 'New Nursery',
-            'Nursery Name': 'Marys Plant Farm & Landscaping',
-            'In what state is your nursery located? (Use Two-Letter Designation)': 'OH',
-            'Type of Nursery': 'Retail, Open to the Public, Catalog',
-            'What percent of your inventory is Native?': 60,
-            'Do you have Ohio Native Species?': 'Yes',
-            'What does your inventory consist of?': 'Seed, Plants, Herbaceous, Ferns, Woody, Shrubs, Bare Root, Containerized Trees, B&B Trees',
-            'Are your plants...': 'Germinated from seed, Grown by clonal dividing',
-            'Does your nursery specialize in...': 'Native Plants',
-            'Address (Format: street, city)': '2410 Lanes Mill Rd, Hamilton',
-            'Zip Code': 45013,
-            'Your name': 'Sherri Berger, manager',
-            'Phone number': '5138940022',
-            'E-mail': 'marysplantfarm@zoomtown.com',
-            'Preferred contact method': 'Email',
-            'Notes': 'We are a family owned and operated nursery in our 44th season, growing our plants for hardiness in Ohio soil in our fields, not in a soilless mix in a greenhouse. During business hours our customers are encouraged to walk Marys private gardens that are 75 years old, showing mature plants and the locations where they prefer to grow .',
-            'Questions and comments': 'Our complete catalog is found at www.marysplantfarm.com',
-            'Website': nan,
-            'point': None,
-            'latitude': nan,
-            'longitude': nan,
-            'elevation': nan
-        },
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [nan, nan]
-        }
-    }, {
-        'type': 'Feature',
-        'properties': {
             'Timestamp': '1/25/2020 12:34:24',
             'Are you changing a listing or adding a new one?': 'Existing Nursery',
             'Nursery Name': 'Stone Silo Prairie Gardens',
